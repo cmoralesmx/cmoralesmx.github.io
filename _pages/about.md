@@ -2,23 +2,55 @@
 layout: about
 title: about
 permalink: /
-description: <a href="#">Affiliations</a>. Address. Contacts. Moto. Etc.
+description: <a href="https://www.sheffield.ac.uk/dcs/">The UoS DCS</a> | PhD (to be), MSc, BSc <br /> ABM, GPGPU, HPC, NLP | Python, CUDA, R, PHP
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: portrait_CAMG.jpg
   address: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
+    <p>The Palm Liversidge Building, Office C+01</p>
+    <p>On the corner of Broad Lane and Newcastle Street</p>
+    <p>Sheffield, S1 3JD</p>
 
-news: true  # includes a list of news items
-selected_papers: true # includes a list of papers marked as "selected={true}"
+news: false  # includes a list of news items
+selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+I am currently on the final stretch of a PhD project where I have been applying
+**Agent-Based Modelling** to study complex biological phenomena using **CUDA**
+and **multiprocessing** both in HPC and commodity hardware environments.  
 
-Put your address / P.O. box / other info right below your picture. You can also disable any these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+Some achievements of this project:
+- It has been awarded a few best poster prizes at international joint
+conferences and showcases.  
+- A virtual reality serious game, product of my PhD, has been invited for 
+demonstration at a series of public talks across the UK sponsored by the
+Society for Reproduction and Fertility (SRF).  
+- The main funding for this project was awarded as scholarship from Mexico's
+Council of Science and Technology. I am thankful for their support.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](http://fortawesome.github.io/Font-Awesome/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+A **full CV** is available [here](/cv) with more detail about previous work
+experience and education history.
+
+I am a bit of a philomath with eclectic ***interests*** and just recently started
+writing about it on my blog [think, code, cycle](/blog). The topics I care about are,
+- ***OSS development***. I maintain an [R package](https://www.r-pkg.org/pkg/gggap){:target="\_blank"}
+and have contributed code to others.
+- ***GNU/Linux***. My main computer runs [Arch](https://www.archlinux.org/){:target="\_blank"}.
+My [home network](/blog/home_network_fully_run_by_Linux) runs on Linux.
+- ***Cloud Computing***. I am preparing to get certified as an [AWS](
+https://aws.amazon.com/) solutions architect
+- ***Reading***. Although, nowadays my reading is scientific literature and technical
+papers, I quite enjoy getting immersed in nonfiction works especially of
+the biography, history, and travelogue type.
+- ***Travelling***. Travelogues are good, but nothing beats first-hand experiencing
+other cultures and their cousines, seeing new places with my own eyes, and the
+boost in problem solving skills that comes with travelling. Life is too short
+to live it vicariously through others. Sadly, this on pause at the moment.
+- ***Road cycling***. I have had the fortune of living in a city with plenty of hilly
+roads to enjoy, some with national hill climbing fame while others have been
+featured in a few of the thoughtest cycling routes in the UK. I thrive pushing
+myself to go further, faster. You can find me on [strava](https://strava.com/athletes/20777326)
+
+
