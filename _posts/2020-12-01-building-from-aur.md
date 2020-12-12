@@ -14,11 +14,12 @@ src="{{ site.baseurl }}/assets/img/2020-12-01-aur.png">
 One of the interesting aspects of Arch Linux is its user-supported resources.
 This post will focus on one of those resources, the Arch User Repository (AUR)
 
-*"The Arch User Repository (AUR) is a community-driven repository for Arch users.
+<blockquote><p>The Arch User Repository (AUR) is a community-driven repository
+for Arch users.
 It contains package descriptions (PKGBUILDs) that allow you to compile a package
 from source with makepkg and then install it via pacman. The AUR was created to
 organize and share new packages from the community and to help expedite popular
-packages' inclusion into the community repository"*
+packages' inclusion into the community repository</p></blockquote>
 
 Therefore, we can think of it as a massive collection of software (in source
 form) not available in the official repositories.
