@@ -31,7 +31,7 @@ talks across the UK sponsored by the [Society for Reproduction and Fertility](ht
 [Council of Science and Technology](https://www.conacyt.gob.mx/). I am
 thankful for their support.
 
-A **full CV** is available [here](/cv) with more detail about previous work
+A **resume** is available [here](/assets/pdf/CarlosMoralesResume2020.pdf) with more detail about previous work
 experience and education history.
 
 I am a bit of a philomath with eclectic ***interests*** and just recently started
@@ -48,11 +48,11 @@ the books I read using [goodreads](https://www.goodreads.com/user/show/16552304-
 Nowadays, my reading is focused on scientific literature and technical documents.
 - ***Travelling***. Nothing beats seeing new places with my own eyes!
 I find myself fascinated by the experience of experiencing other cultures and
-their cousines while getting a boost on the problem solving skills. Sadly, but
+their cuisines while getting a boost on the problem solving skills. Sadly, but
 understandably, this is on pause at the moment.
 - ***Road cycling***. I have had the fortune of living in a city with plenty of hilly
 roads to enjoy, some of national hill climbing fame while others have been
-featured in a few of the thoughtest cycling routes in the UK. I thrive pushing
+featured in a few of the toughest cycling routes in the UK. I thrive pushing
 myself to go further, faster. I keep track of my outings using [strava](https://strava.com/athletes/20777326)
 
 
