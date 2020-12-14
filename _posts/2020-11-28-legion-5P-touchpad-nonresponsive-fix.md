@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Legion 5P, touchpad nonresponsive fix
+title: Legion 5P, touchpad non responsive fix
 date: 2020-11-28 20:01:00
-description: Steps to fix the touchpad nonresponsive issue in Lenovo Legion 5P
+description: Steps to fix the touchpad non responsive issue in Lenovo Legion 5P
 comments: true
 ---
 The Legion 5P-15ARH05H has an MSFT0001:00 06CB:7F28 touchpad which was not
@@ -43,13 +43,13 @@ The recommended fix, discussed in [bug #1887190](https://bugs.launchpad.net/ubun
 is based on interrupts instead of polling. Interrupts are better than polling
 for power management.  
 How do we fix this? [comment #189](https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1887190/comments/189) 
-contains code which is a standalone version of the solution in comment #171.  
-This standalone version is only useful if the module `pinctrl-amd` is built
+contains code which is a stand-alone version of the solution in comment #171.  
+This stand-alone version is only useful if the module `pinctrl-amd` is built
 out of the kernel. To check if that is the case, we must execute,
 ```
 $ modinfo pinctrl-amd
 ```
-For arch-based distributions this is the case so the standalone solution works.
+For arch-based distributions this is the case so the stand-alone solution works.
 Based on these findings, we must compile and install the module.  
 The instructions to do so are available on the same comment #189 linked earlier.
 
