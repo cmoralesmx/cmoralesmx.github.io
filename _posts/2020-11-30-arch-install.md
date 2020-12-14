@@ -17,10 +17,10 @@ Arch Linux on Lenovo Legion 5P
 In earlier posts, I documented how I solved a series of issues due to the
 Linux support in this laptop. Eventually, I found the lack of the `nvidia-dkms`
 package was adding unnecessary work for me. And because using packages from
-a different disstribution is not supported or recommended, I decided to
+a different distribution is not supported or recommended, I decided to
 migrate my system to Arch Linux.
 
-Before going any forther, I must apologise, this post is purely technical.
+Before going any further, I must apologise, this post is purely technical.
 It follows the official [installation guide](
 https://wiki.archlinux.org/index.php/installation_guide),
 which is a must read for installing Arch, but the purpose of this post is to
@@ -44,11 +44,11 @@ Enable the UK keyboard layout
 # loadkeys uk
 ```
 
-Try to connect directly to WiFi as follows,
+Try to connect directly to Wi-Fi as follows,
 ```
 # iwctl --passphrase myPassPhrase station wlan0 connect targetWiFiNetwork
 ```
-If this fails, either enable the WiFi devices
+If this fails, either enable the Wi-Fi devices
 ```
 # rfkill unblock wifi
 ```
@@ -81,7 +81,7 @@ Then, setup the drive layout
 # reflector # choose fast servers
 ```
 
-Procees with the base installation
+Proceed with the base installation
 ```
 # pacstrap /mnt base linux5.8 linux-firmware amd-ucode btrfs-progs dhclient \
 dhcpcd dosfstools efibootmgr iwd lynx man-db man-pages nvme-cli openssh rsync \
@@ -96,7 +96,7 @@ Write the current file system structure to fstab
 # cat /mnt/etc/fstab
 ```
 
-Set the timezone and adjust the system clock
+Set the time zone and adjust the system clock
 ```
 # arch-chroot /mnt
 # ln -sf /usr/share/zoneinfo/Europe/London /etc/localtime # set the timezone
@@ -123,7 +123,7 @@ Set the keyboard layout persistently
 KEYMAP=uk
 ```
 
-Set the hostname
+Set the host name
 ```
 # vim /etc/hostname
 ```
@@ -140,7 +140,7 @@ Add default addresses to `hosts` file
 127.0.1.1	arch-usb.localdomain	arch-usb
 ```
 
-Generate the initial minimal filesystem `initramfs`
+Generate the initial minimal file system `initramfs`
 ```
 # mkinitcpio -P
 ```
@@ -163,7 +163,7 @@ Enable users in wheel group to execute anything as sudo
 ```
 *Note:* Search and uncomment the line about wheel users
 
-Remove unnecesary packages from the install
+Remove unnecessary packages from the install
 ```
 # pacman -R modemmanager, mobile-broadband-provider-info
 ```
