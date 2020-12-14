@@ -42,7 +42,7 @@ My [home network](/blog/home_network_fully_run_by_Linux), like most of the
 world's infrastructure, runs on GNU/Linux.
 - ***Cloud Computing***. I am preparing to get certified as an [AWS](https://aws.amazon.com/)
 solutions architect
-- ***Reading***. I quite enjoy getting immersed in nonfiction works especially
+- ***Reading***. I quite enjoy getting immersed in non-fiction works especially
 of the biography, history, and travelogue type. For some time, I kept track of
 the books I read using [goodreads](https://www.goodreads.com/user/show/16552304-carlos).
 Nowadays, my reading is focused on scientific literature and technical documents.
