@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Building packages fom the AUR
+title: Building packages from the AUR
 date: 2020-12-01 20:01:00
 description: A simple guide for build packages from the AUR without helpers
 comments: true
@@ -25,7 +25,7 @@ Therefore, we can think of it as a massive collection of software (in source
 form) not available in the official repositories.
 
 Some may feel building these packages is hard so they recommend the use of
-helpers for this task, i.e.: yay, pacman, and similars. But in many cases,
+helpers for this task, i.e.: yay, pacman, and similar. But in many cases,
 the build process is mostly automated by the build scripts available here.
 
 In my opinion, part of the reason for doing this my way is because I have

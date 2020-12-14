@@ -57,7 +57,7 @@ legion5P kernel:  ? entry_SYSCALL_64_after_hwframe+0x44/0xa9
 {% endhighlight %}
 </div>
 
-I checked the Nvidia developer forum and the manjaro forum, luckly the [solution]((https://forums.developer.nvidia.com/t/ryzen-7-gtx-1660ti-blank-screen-on-external-outputs-in-hybrid-graphics-mode/157800/4))
+I checked the Nvidia developer forum and the Manjaro forum, luckily the [solution]((https://forums.developer.nvidia.com/t/ryzen-7-gtx-1660ti-blank-screen-on-external-outputs-in-hybrid-graphics-mode/157800/4))
 was already known and a [patch](https://patchwork.kernel.org/project/linux-arm-kernel/patch/20200513133245.6408-5-m.szyprowski@samsung.com/)
 was available for the kernel.
 After checking if the patch was already applied to Manjaro or upstream latest
@@ -82,7 +82,7 @@ $ makepkg -g >> PKGBUILD
 ```
 6. build the kernel package. Here, I had two options, the manjaro way and the
 upstream way  
-  a. the manjaro way: 
+  a. the Manjaro way: 
 ```
 $ cd ~/git && buildpkg -p linux59  
 ```
@@ -137,7 +137,7 @@ I learned that the Nvidia drivers installed using the `mhwd` tool from Manjaro
 were not compatible with my custom kernel. Therefore, I needed to compile the
 required modules.  
 
-I went back to Manjaro's repo and searched for the package 
+I went back to the Manjaro repo and searched for the package 
 `hybrid-amd-nvidia-455xx-prime` but there is no such package!
 How Manjaro handles hybrid video then? I traced the installation of the drivers
 and found that `/var/lib/mhwd/db/pci/graphic_drivers/hybrid-amd-nvidia-455xx-prime/MHWDCONFIG`

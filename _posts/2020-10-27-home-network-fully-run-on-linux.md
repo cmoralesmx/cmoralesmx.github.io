@@ -14,11 +14,11 @@ src="{{ site.baseurl }}/assets/img/2020-10-27-network.jpeg">
   <div class="col-sm-2"></div>
 </div>
 It has been a few years now since I setup the network at my place. It has been
-working boringly reliable so I keep forgeting to write about it.
+working boringly reliable so I keep forgetting to write about it.
 
-Anyway, the nework is composed of:  
+Anyway, the network is composed of:  
 1x local server  
-1x Raspberri Pi  
+1x Raspberry Pi  
 2x GPU computing nodes  
 Nx laptop and other small devices  
 
@@ -59,7 +59,7 @@ Some of the services hosted by this device are:
 - Network-wide AD-blocking based on dnsmasq using the [notracking host-blocklist](https://github.com/notracking/hosts-blocklists)
 - File sharing via the torrent protocol. I am usually seeding some GNU/Linux
 distributions
-- Media streaming of the collection of movies and music
+- Media streaming of the collection of films and music
 - An instance of Redis for doing some test
 <div class="row mt-3 mb-3">
   <div class="col-sm-3"></div>
@@ -75,9 +75,9 @@ Stock image of a Raspberry Pi 4 SBC
 
 ## Computing nodes
 
-Since lockdown started, I was able to have access to an additional desktop
+Since lock down started, I was able to have access to an additional desktop
 computer with an Nvidia GTX 1070 and a laptop with an RTX 2070. These two
-systems act as headless nodes for CUDA taks. Their addition was key for a
+systems act as headless nodes for CUDA tasks. Their addition was key for a
 period of my project when I needed to execute many week-long tasks on CUDA
 enabled GPUs and the resources at the University's HPC were scarce.
 
