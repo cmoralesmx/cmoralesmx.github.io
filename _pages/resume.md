@@ -1,7 +1,7 @@
 ---
 layout: about
-title: cv
-permalink: /cv/
+title: resume
+permalink: /resume/
 description: PhD (to be), MSc, BSc
 
 profile:
@@ -17,6 +17,7 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 nav: true
 ---
+Download the [PDF version](/assets/pdf/CarlosMoralesResume2020.pdf)
 
 The work done during my PhD sits at the intersection of Computer Science and 
 Biology. My project mainly focuses on applying Agent-Based Modelling to
@@ -50,17 +51,17 @@ Analysis to study the "Textual Alignment of News Blogs".
 
 May 2013 - Aug 2015, I was employed as **technical lead** at an enterprise
 services startup in Queretaro, Mexico.
-My main responsabilities were process and requirement analysis, software
+My main responsibilities were process and requirement analysis, software
 implementation, and project administration of Java based solutions for
 electronic invoicing, stateful web services, data migrations, and email services. 
 I also lead a team of 7 junior developers on the final part of the development
-stage and later on the implementation of a custom ERP for a medium sized
+stage and later on the implementation of a custom ERP software for a medium sized
 enterprise. For a brief period of time, I was also in charge of the internal
 infrastructure of the startup doing SAP Basis activities.
 
 Sep 2010 - Feb 2013, I completed a ***bachelor degree*** (informatics) at the
 Polytechnic University of Morelos (UPEMOR) in Jiutepec, Mexico.
-For my thesis, I implemented and bechmarked an Asynchronous Bidirectional
+For my thesis, I implemented and benchmarked an Asynchronous Bidirectional
 Associative Memory (ABAM). To cover my expenses I joined the IT department
 providing technical support at the university's computer labs. The activities
 carried involved software installations, computer maintenance.
@@ -68,7 +69,7 @@ carried involved software installations, computer maintenance.
 2008 - 2010, I worked as a **web developer** at an AD agency in Cuernavaca,
 Mexico. My work here consisted of developing PHP based web sites for their
 small-business clients. I was in charge of designing, implementation, and
- insfrastructure.
+ infrastructure.
 As the sole developer at the time, my work was key in supporting the agency's
 transition from a print-focused business with minimal web operations to a
 web-focused AD agency with minimal print activity.
@@ -80,3 +81,4 @@ China-Mexico Chamber of Commerce. This was a three-lingual web portal when i18n
 (internationalisation)  was still an exotic area of development.
 
 
+Download the [PDF version](/assets/pdf/CarlosMoralesResume2020.pdf)
