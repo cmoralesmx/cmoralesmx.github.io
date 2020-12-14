@@ -50,14 +50,14 @@ focus in Natural Language Processing, for my thesis I applied Latent Semantic
 Analysis to study the "Textual Alignment of News Blogs".
 
 May 2013 - Aug 2015, I was employed as **technical lead** at an enterprise
-services startup in Queretaro, Mexico.
+services start-up in Queretaro, Mexico.
 My main responsibilities were process and requirement analysis, software
 implementation, and project administration of Java based solutions for
 electronic invoicing, stateful web services, data migrations, and email services. 
 I also lead a team of 7 junior developers on the final part of the development
 stage and later on the implementation of a custom ERP software for a medium sized
 enterprise. For a brief period of time, I was also in charge of the internal
-infrastructure of the startup doing SAP Basis activities.
+infrastructure of the start-up doing SAP Basis activities.
 
 Sep 2010 - Feb 2013, I completed a ***bachelor degree*** (informatics) at the
 Polytechnic University of Morelos (UPEMOR) in Jiutepec, Mexico.
