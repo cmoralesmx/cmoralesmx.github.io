@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>Carlos A. Morales | blank</title>
+<title>Carlos A. Morales | Legion 5P, Linux support</title>
 <meta name="description" content="Personal site of Carlos A. Morales, CV, Projects, Blog.
 ">
 
@@ -29,7 +29,7 @@
 <link rel="shortcut icon" href="/assets/img/favicon.ico">
 <link rel="stylesheet" href="/assets/css/main.css">
 
-<link rel="canonical" href="/blog/">
+<link rel="canonical" href="/blog/2020/legion-5P-linux-support/">
 
 <!-- Theming-->
 
@@ -138,70 +138,116 @@
     <!-- Content -->
 
     <div class="container mt-5">
-      <div class="post">
+      
 
-  <div class="header-bar">
-    <h1>think, code, cycle</h1>
-    <h2>Writings about things I like</h2>
+<div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Legion 5P, Linux support</h1>
+    <p class="post-meta">October 24, 2020</p>
+  </header>
+
+  <article class="post-content">
+    <p>The specific model I will cover in this post is a Lenovo Legion 5P-15ARH05H.
+The distribution in use is Manjaro Linux with an initial setup done using media
+version 20.1</p>
+
+<div class="row mt-3 mb-3">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/2020-10-24-manjaro.png" />
+    </div>
+    <div class="col-sm-2"></div>
+</div>
+<p>Setting up Manjaro was a trivial task. The automated setup completed without a
+hitch in about 10-15 minutes without a live internet connection.</p>
+
+<p>After rebooting, I was gladly surprised when I realized the nvidia drivers were
+already installed even though the setup was done offline! Not that installing
+those drivers was especially hard in the last few years as prior versions
+required doing,</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo pacman -Syu
+$ sudo mhw -a pci nonfree 0300
+</code></pre></div></div>
+<p>Not having to worry about these after setup seems like a positive step for
+Manjaro. Anyway, on with the post.</p>
+
+<p>Apart from the discrete GPU, most of the hardware was correctly identified by
+the kernel. There were two hardware-support issues I had to handle myself and
+one feature which I think must be changed so I count this as an issue too.</p>
+
+<p>Next is a list of issues fixed with links to the fixing procedures</p>
+
+<h2 id="issues-fixed">Issues fixed.</h2>
+<ul>
+  <li><a href="#noisy-pc-speaker-on-errors">Noisy PC speaker on errors</a></li>
+  <li><a href="/blog/2020/legion-5P-touchpad-nonresponsive-fix">Touchpad non responsive</a></li>
+  <li>Hybrid graphics causing blank HDMI-out
+    <ul>
+      <li><a href="#hdmi-out-with-discrete-graphics-and-brightess-control">Solution using discrete graphics only</a></li>
+      <li><a href="/blog/2020/legion-5P-hdmi-out-with-hybrid-graphics">Solution patching the kernel to fix the hybrid mode</a></li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+<h3 id="noisy-pc-speaker-on-errors">Noisy PC speaker on errors</h3>
+
+<p>The PC speaker can be easily disabled globally, by executing as ROOT</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># echo "blacklist pcspkr" | tee /etc/modprobe.d/nobeep.conf
+</code></pre></div></div>
+<hr />
+<h3 id="hdmi-out-with-discrete-graphics-and-brightness-control">HDMI-out with discrete graphics and brightness control</h3>
+
+<p>To use discrete graphics, this must be enabled in the BIOS of the computer.
+After doing that, the discrete GPU will drive the HDMI-out and USB-c ports,
+while the Radeon graphics drive the LCD panel, but the discrete card will
+perform all the rendering and send the output to the corresponding buffers.
+Therefore, all the rendering is hardware-accelerated by the dedicated GPU.</p>
+
+<p>In this mode, the brightness control should work without issues for the internal
+panel by adding the following entry to the Xorg.conf:</p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Option "RegistryDwords" "EnableBrightnessControl=1"
+</code></pre></div></div>
+
+<p>This <a href="https://unix.stackexchange.com/a/610415">stackexchange answer</a> suggests
+creating the file <code class="language-plaintext highlighter-rouge">/usr/share/X11/xorg.conf.d/10-nvidia-brightness.conf</code>
+with the following content,</p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Section "Device"
+    Identifier     "Device0"
+    Driver         "nvidia"
+    VendorName     "NVIDIA Corporation"
+    BoardName      "RXT 2060"
+    Option         "RegistryDwords" "EnableBrightnessControl=1"
+EndSection
+</code></pre></div></div>
+
+<p>After doing that and rebooting, brightness control should work.</p>
+
+<div class="row mt-3 mb-3">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/2020-10-24-Linux.png" />
   </div>
+<div class="col-sm-4"></div>
+</div>
 
-
-  <ul class="post-list">
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/copying-across-vim-instances/">Copying and Pasting between VIM instances</a></h3>
-        <p class="post-meta">December 4, 2020</p>
-        <p>How to copy and paste text from one VIM instance to another</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/git-store-dot-files/">Using git to track your dot files</a></h3>
-        <p class="post-meta">December 3, 2020</p>
-        <p>How to use git for tracking changes to your configuration files</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/arch-install-gui/">Installing Arch Linux in a Lenovo Legion 5P, adding a GUI</a></h3>
-        <p class="post-meta">December 2, 2020</p>
-        <p>The second part of installing Arch on my laptop, the Graphical User Interface</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/building-from-aur/">Building packages from the AUR</a></h3>
-        <p class="post-meta">December 1, 2020</p>
-        <p>A simple guide for build packages from the AUR without helpers</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/arch-install/">Installing Arch Linux on a Lenovo Legion 5P</a></h3>
-        <p class="post-meta">November 30, 2020</p>
-        <p>The steps I followed for installing Arch Linux on my laptop</p>
-      </li>
-    
-  </ul>
+  </article>
 
   
-<nav aria-label="Blog page naviation">
-  <ul class="pagination pagination-lg justify-content-center">
-    <li class="page-item disabled">
-      <a class="page-link" href="" tabindex="-1" aria-disabled="">Newer</a>
-    </li>
-    
-      
-        <li class="page-item active"><a class="page-link" href="/blog/index.html" title="blank">1</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/2/index.html" title="blank - page 2">2</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/3/index.html" title="blank - page 3">3</a></li>
-      
-    
-    <li class="page-item ">
-      <a class="page-link" href="/blog/page/2/">Older</a>
-    </li>
-  </ul>
-</nav>
-
-
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+      var disqus_shortname  = 'think-code-cycle';
+      var disqus_identifier = '/blog/2020/legion-5P-linux-support';
+      var disqus_title      = "Legion 5P, Linux support";
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  
 
 </div>
 

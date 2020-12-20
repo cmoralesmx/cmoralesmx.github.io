@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>Carlos A. Morales | blank</title>
+<title>Carlos A. Morales | Building packages from the AUR</title>
 <meta name="description" content="Personal site of Carlos A. Morales, CV, Projects, Blog.
 ">
 
@@ -29,7 +29,7 @@
 <link rel="shortcut icon" href="/assets/img/favicon.ico">
 <link rel="stylesheet" href="/assets/css/main.css">
 
-<link rel="canonical" href="/blog/">
+<link rel="canonical" href="/blog/2020/building-from-aur/">
 
 <!-- Theming-->
 
@@ -138,70 +138,106 @@
     <!-- Content -->
 
     <div class="container mt-5">
-      <div class="post">
+      
 
-  <div class="header-bar">
-    <h1>think, code, cycle</h1>
-    <h2>Writings about things I like</h2>
-  </div>
+<div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Building packages from the AUR</h1>
+    <p class="post-meta">December 1, 2020</p>
+  </header>
+
+  <article class="post-content">
+    <div class="row mt-3 mb-3">
+    <div class="col-sm">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/2020-12-01-aur.png" />
+    </div>
+</div>
+<p>One of the interesting aspects of Arch Linux is its user-supported resources.
+This post will focus on one of those resources, the Arch User Repository (AUR)</p>
+
+<blockquote><p>The Arch User Repository (AUR) is a community-driven repository
+for Arch users.
+It contains package descriptions (PKGBUILDs) that allow you to compile a package
+from source with makepkg and then install it via pacman. The AUR was created to
+organize and share new packages from the community and to help expedite popular
+packages' inclusion into the community repository</p></blockquote>
+
+<p>Therefore, we can think of it as a massive collection of software (in source
+form) not available in the official repositories.</p>
+
+<p>Some may feel building these packages is hard so they recommend the use of
+helpers for this task, i.e.: yay, pacman, and similar. But in many cases,
+the build process is mostly automated by the build scripts available here.</p>
+
+<p>In my opinion, part of the reason for doing this my way is because I have
+set up the build tools to,</p>
+<ul>
+  <li>make use of the n-cores in my system to shorten the time needed building
+the packages</li>
+  <li>use RAM instead of persistent storage for the build process</li>
+  <li>optimize the applications for a specific processor architecture</li>
+  <li>keep the produced packages in a specific location for later reuse</li>
+</ul>
+
+<p>Those settings are stored in <code class="language-plaintext highlighter-rouge">~/.makepkg.conf</code> and a good guide for setting
+them is available at <a href="https://wiki.archlinux.org/index.php/makepkg#Tips_and_tricks">this entry</a>
+of the Arch Wiki.</p>
+
+<p>The whole process itself is fairly simple, it entails</p>
+<ol>
+  <li>fetching the build package description files from the AUR</li>
+  <li>creating the package (or packages)</li>
+  <li>using pacman to install the produced package (or packages)</li>
+</ol>
+
+<p>In the next example, five packages are fetched and one gpg key is retrieved
+to validate one of the packages. This step is sometimes needed for some
+packages if the signing key of the package maintainer changed after the build
+file was made available.</p>
+
+<p>To fetch the build scripts we just need to git clone what we need,</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd ~/aur
+$ git clone https://aur.archlinux.org/visual-studio-code-bin.git
+$ git clone https://aur.archlinux.org/browsh.git
+$ git clone https://aur.archlinux.org/ipscan.git
+$ git clone https://aur.archlinux.org/gcc8.git
+$ gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys A328C3A2C3C45C06
+$ git clone https://aur.archlinux.org/cuda-10.2.git
+</code></pre></div></div>
+<p>Cloning the needed files should be fairly fast.</p>
+
+<p>Now, each package is built in the same way by issuing the following command
+from each of the directories created by the clone process</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ makepkg -S
+</code></pre></div></div>
+
+<p>After the build is completed, we instruct pacman to install using the packages
+produced by using the <code class="language-plaintext highlighter-rouge">-U</code> flag and the full path of the package,</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo pacman -U ~/aur/packages/gcc8-*.tar.zst 
+$ sudo pacman -U ~/aur/packages/cuda-10.2-*.tar.zst
+$ sudo pacman -U ~/aur/packages/visual-studio-code-bin-1.51.1-1-x86_64.pkg.tar.zst
+</code></pre></div></div>
+
+<p>That is it, you should be ready to build your own AUR packages.</p>
 
 
-  <ul class="post-list">
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/copying-across-vim-instances/">Copying and Pasting between VIM instances</a></h3>
-        <p class="post-meta">December 4, 2020</p>
-        <p>How to copy and paste text from one VIM instance to another</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/git-store-dot-files/">Using git to track your dot files</a></h3>
-        <p class="post-meta">December 3, 2020</p>
-        <p>How to use git for tracking changes to your configuration files</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/arch-install-gui/">Installing Arch Linux in a Lenovo Legion 5P, adding a GUI</a></h3>
-        <p class="post-meta">December 2, 2020</p>
-        <p>The second part of installing Arch on my laptop, the Graphical User Interface</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/building-from-aur/">Building packages from the AUR</a></h3>
-        <p class="post-meta">December 1, 2020</p>
-        <p>A simple guide for build packages from the AUR without helpers</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/arch-install/">Installing Arch Linux on a Lenovo Legion 5P</a></h3>
-        <p class="post-meta">November 30, 2020</p>
-        <p>The steps I followed for installing Arch Linux on my laptop</p>
-      </li>
-    
-  </ul>
+  </article>
 
   
-<nav aria-label="Blog page naviation">
-  <ul class="pagination pagination-lg justify-content-center">
-    <li class="page-item disabled">
-      <a class="page-link" href="" tabindex="-1" aria-disabled="">Newer</a>
-    </li>
-    
-      
-        <li class="page-item active"><a class="page-link" href="/blog/index.html" title="blank">1</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/2/index.html" title="blank - page 2">2</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/3/index.html" title="blank - page 3">3</a></li>
-      
-    
-    <li class="page-item ">
-      <a class="page-link" href="/blog/page/2/">Older</a>
-    </li>
-  </ul>
-</nav>
-
-
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+      var disqus_shortname  = 'think-code-cycle';
+      var disqus_identifier = '/blog/2020/building-from-aur';
+      var disqus_title      = "Building packages from the AUR";
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  
 
 </div>
 

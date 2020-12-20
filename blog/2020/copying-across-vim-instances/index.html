@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>Carlos A. Morales | blank</title>
+<title>Carlos A. Morales | Copying and Pasting between VIM instances</title>
 <meta name="description" content="Personal site of Carlos A. Morales, CV, Projects, Blog.
 ">
 
@@ -29,7 +29,7 @@
 <link rel="shortcut icon" href="/assets/img/favicon.ico">
 <link rel="stylesheet" href="/assets/css/main.css">
 
-<link rel="canonical" href="/blog/">
+<link rel="canonical" href="/blog/2020/copying-across-vim-instances/">
 
 <!-- Theming-->
 
@@ -138,70 +138,101 @@
     <!-- Content -->
 
     <div class="container mt-5">
-      <div class="post">
+      
 
-  <div class="header-bar">
-    <h1>think, code, cycle</h1>
-    <h2>Writings about things I like</h2>
-  </div>
+<div class="post">
 
+  <header class="post-header">
+    <h1 class="post-title">Copying and Pasting between VIM instances</h1>
+    <p class="post-meta">December 4, 2020</p>
+  </header>
 
-  <ul class="post-list">
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/copying-across-vim-instances/">Copying and Pasting between VIM instances</a></h3>
-        <p class="post-meta">December 4, 2020</p>
-        <p>How to copy and paste text from one VIM instance to another</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/git-store-dot-files/">Using git to track your dot files</a></h3>
-        <p class="post-meta">December 3, 2020</p>
-        <p>How to use git for tracking changes to your configuration files</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/arch-install-gui/">Installing Arch Linux in a Lenovo Legion 5P, adding a GUI</a></h3>
-        <p class="post-meta">December 2, 2020</p>
-        <p>The second part of installing Arch on my laptop, the Graphical User Interface</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/building-from-aur/">Building packages from the AUR</a></h3>
-        <p class="post-meta">December 1, 2020</p>
-        <p>A simple guide for build packages from the AUR without helpers</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/arch-install/">Installing Arch Linux on a Lenovo Legion 5P</a></h3>
-        <p class="post-meta">November 30, 2020</p>
-        <p>The steps I followed for installing Arch Linux on my laptop</p>
-      </li>
-    
-  </ul>
+  <article class="post-content">
+    <p>One of the many features of the VIM editor is its multiple clipboards, 
+“registers” in VIM lingo, for storing text (1 unnamed, 26 named, 10 numbered,
+4 read-only, and 2 specials). All of them are accessed independently on-demand
+which is very useful for larger editing tasks.</p>
+
+<p>However, when the text must be copied to a file open in a different VIM
+instance, the situation is slightly different.</p>
+
+<div class="row mt-3 mb-3">
+    <div class="col-sm">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/2020-12-04-vim-nvim.png" />
+    </div>
+</div>
+<div class="caption">
+Vim and NeoVim side by side
+</div>
+
+<p>Depending on how your VIM was built, copying and pasting text between
+instances may not be possible. This feature is usually not enabled on basic VIM
+installations. Checking if the feature is available can be done by executing,</p>
+<div class="language-vim highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">:</span>echo <span class="nb">has</span><span class="p">(</span><span class="s1">'clipboard'</span><span class="p">)</span>
+</code></pre></div></div>
+<p>Which returns a boolean value.</p>
+
+<p>If the feature is not enabled, we could compile a custom VIM or use an
+alternative version such as gvim or even neoVIM.
+Neovim was born as a fork of VIM and is designed to be a drop-in replacement for
+the former and has this feature enabled by default.</p>
+
+<p>Both gvim and neovim can be installed with a single instruction,</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo pacman -S gvim neovim
+</code></pre></div></div>
+
+<p>Then, copying text between different instances of the same application can be
+achieved by taking advantage of two special registers,</p>
+
+<ul>
+  <li>* for PRIMARY, which is the copy-on-select register and can be pasted using
+the mouse.</li>
+  <li>+ for CLIPBOARD, this is accessed with the usual ^C and ^V</li>
+  <li>+ for CLIPBOARD, this is accessed with the usual <kbd>Ctrl</kbd><kbd>Shft</kbd><kbd>C</kbd> and <kbd>Ctrl</kbd><kbd>Shft</kbd><kbd>V</kbd></li>
+</ul>
+
+<p>These registers are accessed similarly to the rest of the registers. For copying text,
+yanking in VIM lingo, to the registers just mentioned, you would do,<br />
+<code class="language-plaintext highlighter-rouge">"*y</code> for the primary register<br />
+<code class="language-plaintext highlighter-rouge">"+y</code> for the clipboard register<br />
+<kbd>"</kbd><kbd>*</kbd><kbd>y</kbd> for the primary register<br />
+<kbd>"</kbd> + <kbd>+</kbd> + <kbd>y</kbd> for the clipboard register</p>
+
+<p>For pasting the text, again, following the usual formula,<br />
+<code class="language-plaintext highlighter-rouge">"+p</code> would paste from the primary register<br />
+<code class="language-plaintext highlighter-rouge">"+p</code> would paste from the clipboard register</p>
+
+<p>Using these registers can be simplified by creating some key-binding such as,</p>
+<div class="language-vim highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">noremap</span> <span class="p">&lt;</span>Leader<span class="p">&gt;</span><span class="k">y</span> "*<span class="k">y</span>
+<span class="nb">noremap</span> <span class="p">&lt;</span>Leader<span class="p">&gt;</span><span class="k">p</span> "*<span class="k">p</span>
+<span class="nb">noremap</span> <span class="p">&lt;</span>Leader<span class="p">&gt;</span>Y "<span class="p">+</span><span class="k">y</span>
+<span class="nb">noremap</span> <span class="p">&lt;</span>Leader<span class="p">&gt;</span>P "<span class="p">+</span><span class="k">p</span>
+</code></pre></div></div>
+<p>You do not know what the <Leader> key is? By default, it is the backslash key
+<kbd> \ </kbd>.
+Or you can check what it is set to with</Leader></p>
+<div class="language-vim highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">:</span>echo mapleader
+</code></pre></div></div>
+<p>In a future post, I will provide more ideas of its use.</p>
+
+<p>And that is it, copying and pasting text between instances is trivial again.</p>
+
+  </article>
 
   
-<nav aria-label="Blog page naviation">
-  <ul class="pagination pagination-lg justify-content-center">
-    <li class="page-item disabled">
-      <a class="page-link" href="" tabindex="-1" aria-disabled="">Newer</a>
-    </li>
-    
-      
-        <li class="page-item active"><a class="page-link" href="/blog/index.html" title="blank">1</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/2/index.html" title="blank - page 2">2</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/3/index.html" title="blank - page 3">3</a></li>
-      
-    
-    <li class="page-item ">
-      <a class="page-link" href="/blog/page/2/">Older</a>
-    </li>
-  </ul>
-</nav>
-
-
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+      var disqus_shortname  = 'think-code-cycle';
+      var disqus_identifier = '/blog/2020/copying-across-vim-instances';
+      var disqus_title      = "Copying and Pasting between VIM instances";
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  
 
 </div>
 

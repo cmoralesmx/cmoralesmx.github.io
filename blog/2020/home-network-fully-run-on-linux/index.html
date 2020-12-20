@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>Carlos A. Morales | blank</title>
+<title>Carlos A. Morales | Home network fully running on GNU/Linux</title>
 <meta name="description" content="Personal site of Carlos A. Morales, CV, Projects, Blog.
 ">
 
@@ -29,7 +29,7 @@
 <link rel="shortcut icon" href="/assets/img/favicon.ico">
 <link rel="stylesheet" href="/assets/css/main.css">
 
-<link rel="canonical" href="/blog/">
+<link rel="canonical" href="/blog/2020/home-network-fully-run-on-linux/">
 
 <!-- Theming-->
 
@@ -138,70 +138,113 @@
     <!-- Content -->
 
     <div class="container mt-5">
-      <div class="post">
+      
 
-  <div class="header-bar">
-    <h1>think, code, cycle</h1>
-    <h2>Writings about things I like</h2>
+<div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Home network fully running on GNU/Linux</h1>
+    <p class="post-meta">October 27, 2020</p>
+  </header>
+
+  <article class="post-content">
+    <div class="row mt-3 mb-3">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-8">
+    <img class="img-fluid rounded z-depth-1" src="/assets/img/2020-10-27-network.jpeg" />
   </div>
+  <div class="col-sm-2"></div>
+</div>
+<p>It has been a few years now since I setup the network at my place. It has been
+working boringly reliable so I keep forgetting to write about it.</p>
+
+<p>Anyway, the network is composed of:<br />
+1x local server<br />
+1x Raspberry Pi<br />
+2x GPU computing nodes<br />
+Nx laptop and other small devices</p>
+
+<h2 id="local-server">Local server</h2>
+<p>It started as a third generation Intel Core i5 with 16 GB of RAM, 2x 500GB SSD,
+1x 320GB SHDD (savaged from an old laptop) and three Radeon RX 450.
+Initially, the GPUs were dedicated to full-time hash computing. Everything was
+installed creatively on top of and around a Mini-ITX case.
+Later, those AMD cards where joint by an Nvidia GTX 1070 for CUDA computing and
+gaming. This server was dual booting Manjaro and Windows 10 until I found about
+<a href="https://lutris.net/">Lutris</a>. Then, it was running GNU/Linux full time.</p>
+
+<p>Eventually, the GPU setup changed to 1x RX480 and 2x Nvidia 1070 cards.</p>
+
+<p>During the last year of its existence, this server was running a Ryzen 5 3600
+CPU with 1x GTX 1070 mini, 1x RTX 2070 Super, and was dedicated to computational
+intensive tasks using multiprocessing and CUDA.</p>
+
+<div class="row mt-3 mb-3">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-8">
+    <img class="img-fluid rounded z-depth-1" src="/assets/img/2020-10-27-server.jpg" />
+  </div>
+  <div class="col-sm-2"></div>
+</div>
+<div class="caption">
+The local server during its last days of operation. It was retired on September 2020.
+</div>
+
+<h2 id="raspberry-pi-4">Raspberry Pi 4</h2>
+<p>Although, this was one of the last additions to the local network, it became
+central to it. This Single Board Computer (SBC) device acts as a WiFi access point sitting between
+the local network and the wired switch serving internet to the flats in the
+same building.<br />
+Some of the services hosted by this device are:</p>
+
+<ul>
+  <li>Network-wide AD-blocking based on dnsmasq using the <a href="https://github.com/notracking/hosts-blocklists">notracking host-blocklist</a></li>
+  <li>File sharing via the torrent protocol. I am usually seeding some GNU/Linux
+distributions</li>
+  <li>Media streaming of the collection of films and music</li>
+  <li>An instance of Redis for doing some test</li>
+</ul>
+<div class="row mt-3 mb-3">
+  <div class="col-sm-3"></div>
+  <div class="col-sm-6">
+    <img class="img-fluid rounded z-depth-1" src="/assets/img/2020-10-27-RaspberryPi4.jpg" />
+  </div>
+  <div class="col-sm-3"></div>
+</div>
+<div class="caption">
+Stock image of a Raspberry Pi 4 SBC
+</div>
+
+<h2 id="computing-nodes">Computing nodes</h2>
+
+<p>Since lock down started, I was able to have access to an additional desktop
+computer with an Nvidia GTX 1070 and a laptop with an RTX 2070. These two
+systems act as headless nodes for CUDA tasks. Their addition was key for a
+period of my project when I needed to execute many week-long tasks on CUDA
+enabled GPUs and the resources at the University’s HPC were scarce.</p>
+
+<h2 id="laptops-and-other-devices">Laptops and other devices</h2>
+
+<p>There are at least two basic laptops, two mobile phones, one tablet and a
+few other devices that connect to the same network.</p>
 
 
-  <ul class="post-list">
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/copying-across-vim-instances/">Copying and Pasting between VIM instances</a></h3>
-        <p class="post-meta">December 4, 2020</p>
-        <p>How to copy and paste text from one VIM instance to another</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/git-store-dot-files/">Using git to track your dot files</a></h3>
-        <p class="post-meta">December 3, 2020</p>
-        <p>How to use git for tracking changes to your configuration files</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/arch-install-gui/">Installing Arch Linux in a Lenovo Legion 5P, adding a GUI</a></h3>
-        <p class="post-meta">December 2, 2020</p>
-        <p>The second part of installing Arch on my laptop, the Graphical User Interface</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/building-from-aur/">Building packages from the AUR</a></h3>
-        <p class="post-meta">December 1, 2020</p>
-        <p>A simple guide for build packages from the AUR without helpers</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/arch-install/">Installing Arch Linux on a Lenovo Legion 5P</a></h3>
-        <p class="post-meta">November 30, 2020</p>
-        <p>The steps I followed for installing Arch Linux on my laptop</p>
-      </li>
-    
-  </ul>
+  </article>
 
   
-<nav aria-label="Blog page naviation">
-  <ul class="pagination pagination-lg justify-content-center">
-    <li class="page-item disabled">
-      <a class="page-link" href="" tabindex="-1" aria-disabled="">Newer</a>
-    </li>
-    
-      
-        <li class="page-item active"><a class="page-link" href="/blog/index.html" title="blank">1</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/2/index.html" title="blank - page 2">2</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/3/index.html" title="blank - page 3">3</a></li>
-      
-    
-    <li class="page-item ">
-      <a class="page-link" href="/blog/page/2/">Older</a>
-    </li>
-  </ul>
-</nav>
-
-
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+      var disqus_shortname  = 'think-code-cycle';
+      var disqus_identifier = '/blog/2020/home-network-fully-run-on-linux';
+      var disqus_title      = "Home network fully running on GNU/Linux";
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  
 
 </div>
 

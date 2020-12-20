@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>Carlos A. Morales | blank</title>
+<title>Carlos A. Morales | Legion 5P, touchpad non responsive fix</title>
 <meta name="description" content="Personal site of Carlos A. Morales, CV, Projects, Blog.
 ">
 
@@ -29,7 +29,7 @@
 <link rel="shortcut icon" href="/assets/img/favicon.ico">
 <link rel="stylesheet" href="/assets/css/main.css">
 
-<link rel="canonical" href="/blog/">
+<link rel="canonical" href="/blog/2020/legion-5P-touchpad-nonresponsive-fix/">
 
 <!-- Theming-->
 
@@ -138,70 +138,77 @@
     <!-- Content -->
 
     <div class="container mt-5">
-      <div class="post">
+      
 
-  <div class="header-bar">
-    <h1>think, code, cycle</h1>
-    <h2>Writings about things I like</h2>
-  </div>
+<div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Legion 5P, touchpad non responsive fix</h1>
+    <p class="post-meta">November 28, 2020</p>
+  </header>
+
+  <article class="post-content">
+    <p>The Legion 5P-15ARH05H has an MSFT0001:00 06CB:7F28 touchpad which was not
+responding to input. A fix is mentioned in this <a href="https://www.linux.org/threads/lenovo-legion-5-touchpad.29536/page-2">linux.org thread</a>
+It entails enabling pooling on the device. This is achievable by creating the
+following two files in <code class="language-plaintext highlighter-rouge">~/Documents</code>,</p>
+
+<p><code class="language-plaintext highlighter-rouge">fix_trackpad.service</code> with the following content,</p>
+<div class="language-systemd highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">[Unit]</span>
+<span class="nt">Description</span><span class="p">=</span>Fix the trackpad on the Legion 5P
+ 
+<span class="k">[Service]</span>
+<span class="nt">ExecStart</span><span class="p">=</span>/usr/bin/fix_trackpad.sh
+ 
+<span class="k">[Install]</span>
+<span class="nt">WantedBy</span><span class="p">=</span>multi-user.target
+</code></pre></div></div>
+
+<p>And <code class="language-plaintext highlighter-rouge">fix_trackpad.sh</code> with the following content,</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/sh</span>
+<span class="nb">echo </span>386 <span class="o">&gt;</span> /sys/class/gpio/export
+<span class="nb">echo </span>out <span class="o">&gt;</span> /sys/class/gpio/gpio386/direction
+</code></pre></div></div>
+<p>Then, issuing the following instructions once to set up the fix to be applied after
+every reboot or cold start,</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo cp</span> ~/Documents/fix_trackpad.sh /usr/bin/
+<span class="nv">$ </span><span class="nb">sudo cp</span> ~/Documents/fix_trackpad.service /etc/systemd/system/
+<span class="nv">$ </span><span class="nb">sudo </span>systemctl <span class="nb">enable </span>fix_trackpad
+</code></pre></div></div>
+
+<p>Yet, additional reading showed pooling is not the best solution for this.</p>
+
+<p>The recommended fix, discussed in <a href="https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1887190/+index?comments=all">bug #1887190</a>,
+is based on interrupts instead of polling. Interrupts are better than polling
+for power management.<br />
+How do we fix this? <a href="https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1887190/comments/189">comment #189</a> 
+contains code which is a stand-alone version of the solution in comment #171.<br />
+This stand-alone version is only useful if the module <code class="language-plaintext highlighter-rouge">pinctrl-amd</code> is built
+out of the kernel. To check if that is the case, we must execute,</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ modinfo pinctrl-amd
+</code></pre></div></div>
+<p>For arch-based distributions this is the case so the stand-alone solution works.
+Based on these findings, we must compile and install the module.<br />
+The instructions to do so are available on the same comment #189 linked earlier.</p>
 
 
-  <ul class="post-list">
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/copying-across-vim-instances/">Copying and Pasting between VIM instances</a></h3>
-        <p class="post-meta">December 4, 2020</p>
-        <p>How to copy and paste text from one VIM instance to another</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/git-store-dot-files/">Using git to track your dot files</a></h3>
-        <p class="post-meta">December 3, 2020</p>
-        <p>How to use git for tracking changes to your configuration files</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/arch-install-gui/">Installing Arch Linux in a Lenovo Legion 5P, adding a GUI</a></h3>
-        <p class="post-meta">December 2, 2020</p>
-        <p>The second part of installing Arch on my laptop, the Graphical User Interface</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/building-from-aur/">Building packages from the AUR</a></h3>
-        <p class="post-meta">December 1, 2020</p>
-        <p>A simple guide for build packages from the AUR without helpers</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/arch-install/">Installing Arch Linux on a Lenovo Legion 5P</a></h3>
-        <p class="post-meta">November 30, 2020</p>
-        <p>The steps I followed for installing Arch Linux on my laptop</p>
-      </li>
-    
-  </ul>
+  </article>
 
   
-<nav aria-label="Blog page naviation">
-  <ul class="pagination pagination-lg justify-content-center">
-    <li class="page-item disabled">
-      <a class="page-link" href="" tabindex="-1" aria-disabled="">Newer</a>
-    </li>
-    
-      
-        <li class="page-item active"><a class="page-link" href="/blog/index.html" title="blank">1</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/2/index.html" title="blank - page 2">2</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/3/index.html" title="blank - page 3">3</a></li>
-      
-    
-    <li class="page-item ">
-      <a class="page-link" href="/blog/page/2/">Older</a>
-    </li>
-  </ul>
-</nav>
-
-
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+      var disqus_shortname  = 'think-code-cycle';
+      var disqus_identifier = '/blog/2020/legion-5P-touchpad-nonresponsive-fix';
+      var disqus_title      = "Legion 5P, touchpad non responsive fix";
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  
 
 </div>
 

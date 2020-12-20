@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>Carlos A. Morales | Installing Arch Linux on a Lenovo Legion 5P</title>
+<meta name="description" content="Personal site of Carlos A. Morales, CV, Projects, Blog.
+">
+
+<!-- Open Graph -->
+
+
+<!-- Bootstrap & MDB -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" integrity="sha512-RO38pBRxYH3SoOprtPTD86JFOclM51/XTIdEPh5j8sj4tp8jmQIx26twG52UaLi//hQldfrh7e51WzP9wuP32Q==" crossorigin="anonymous" />
+
+<!-- Fonts & Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"  integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+<!-- Code Syntax Highlighting -->
+<link rel="stylesheet" href="https://gitcdn.link/repo/jwarby/jekyll-pygments-themes/master/zenburn.css" />
+
+<!-- Styles -->
+<link rel="shortcut icon" href="/assets/img/favicon.ico">
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<link rel="canonical" href="/blog/2020/arch-install/">
+
+<!-- Theming-->
+
+  <script src="/assets/js/theme.js"></script>
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4136342-19"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-4136342-19');
+  </script>
+
+
+    
+
+  </head>
+
+  <body class="fixed-top-nav sticky-bottom-footer">
+
+    <!-- Header -->
+
+    <header>
+
+    <!-- Nav Bar -->
+    <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
+    <div class="container">
+      
+      <a class="navbar-brand title font-weight-lighter" href="/">
+       <span class="font-weight-bold">Carlos</span> A.  Morales
+      </a>
+      
+      <!-- Navbar Toogle -->
+      <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar top-bar"></span>
+        <span class="icon-bar middle-bar"></span>
+        <span class="icon-bar bottom-bar"></span>
+      </button>
+      <div class="collapse navbar-collapse text-right" id="navbarNav">
+        <ul class="navbar-nav ml-auto flex-nowrap">
+          <!-- About -->
+          <li class="nav-item ">
+            <a class="nav-link" href="/">
+              about
+              
+            </a>
+          </li>
+          
+          <!-- Blog -->
+          <li class="nav-item active">
+            <a class="nav-link" href="/blog/">
+              blog
+              
+            </a>
+          </li>
+          
+          <!-- Other pages -->
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/resume/">
+                resume
+                
+              </a>
+          </li>
+          
+          
+          
+            <div class = "toggle-container">
+              <a id = "light-toggle">
+                  <i class="fas fa-moon"></i>
+                  <i class="fas fa-sun"></i>
+              </a>
+            </div>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+</header>
+
+
+    <!-- Content -->
+
+    <div class="container mt-5">
+      
+
+<div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Installing Arch Linux on a Lenovo Legion 5P</h1>
+    <p class="post-meta">November 30, 2020</p>
+  </header>
+
+  <article class="post-content">
+    <div class="row mt-3 mb-3">
+    <div class="col-sm">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/2020-12-02-arch.png" />
+    </div>
+</div>
+<div class="caption">
+Arch Linux on Lenovo Legion 5P
+</div>
+<p>In earlier posts, I documented how I solved a series of issues due to the
+Linux support in this laptop. Eventually, I found the lack of the <code class="language-plaintext highlighter-rouge">nvidia-dkms</code>
+package was adding unnecessary work for me. And because using packages from
+a different distribution is not supported or recommended, I decided to
+migrate my system to Arch Linux.</p>
+
+<p>Before going any further, I must apologise, this post is purely technical.
+It follows the official <a href="https://wiki.archlinux.org/index.php/installation_guide">installation guide</a>,
+which is a must read for installing Arch, but the purpose of this post is to
+act as a personal reference for the future.</p>
+
+<h2 id="partition-schema">Partition schema</h2>
+<p>I have used the following schema on 500Gb and 1Tb drives</p>
+<pre><code class="language-pre">device		size	format	mont point	system
+nvme1n1p1 	  260 	fat 	/mnt/boot	/boot
+nvme1n1p2	20480	btrfs	/mnt		/
+nvme1n1p3	12288	btrfs	/mnt/var	/var
+nvme1n1p4	13312	swap	swap		swap
+nvme1n1p5	all	btrfs	/mnt/home	/home
+</code></pre>
+
+<h2 id="initial-steps">Initial steps</h2>
+<p>Enable the UK keyboard layout</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># loadkeys uk
+</code></pre></div></div>
+
+<p>Try to connect directly to Wi-Fi as follows,</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># iwctl --passphrase myPassPhrase station wlan0 connect targetWiFiNetwork
+</code></pre></div></div>
+<p>If this fails, either enable the Wi-Fi devices</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># rfkill unblock wifi
+</code></pre></div></div>
+<p>or try with the interactive way</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># iwctl
+# station wlan0 scan
+# station wlan0 get-networks
+# station wlan0 connect targetWifiNetwork
+# exit
+</code></pre></div></div>
+<p>Once a connection is established, sync the system clock</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># timedatectl set-ntp true
+</code></pre></div></div>
+<p>Then, setup the drive layout</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># fdisk -l # partition the drives according to the partition scheme shown earlier
+# mkfs.btrfs /dev/nvme1n1p2 -f # root
+# mkfs.btrfs /dev/nvme1n1p3 -f # var
+# mkswap /dev/nvme1n1p4
+# swapon /dev/nvme1n1p4
+# mount /dev/nvme1n1p2 /mnt
+# mkdir /mnt/boot
+# mkdir /mnt/var
+# mkdir /mnt/home
+# mount /dev/nvme1n1p1 /mnt/boot
+# mount /dev/nvme1n1p3 /mnt/var
+# mount /dev/nvme1n1p5 /mnt/home
+# reflector # choose fast servers
+</code></pre></div></div>
+
+<p>Proceed with the base installation</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># pacstrap /mnt base linux5.8 linux-firmware amd-ucode btrfs-progs dhclient \
+dhcpcd dosfstools efibootmgr iwd lynx man-db man-pages nvme-cli openssh rsync \
+sudo texinfo tmux usbutils gvim vpnc zsh xf86-video-amdgpu vulkan-radeon 
+</code></pre></div></div>
+
+<h2 id="configure-the-system">Configure the system</h2>
+
+<p>Write the current file system structure to fstab</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># genfstab -U /mnt &gt;&gt; /mnt/etc/fstab
+# cat /mnt/etc/fstab
+</code></pre></div></div>
+
+<p>Set the time zone and adjust the system clock</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># arch-chroot /mnt
+# ln -sf /usr/share/zoneinfo/Europe/London /etc/localtime # set the timezone
+# hwclock --systohc # generate /etc/adjtime
+</code></pre></div></div>
+
+<p>Edit <code class="language-plaintext highlighter-rouge">/etc/locale.gen</code> and uncomment the locales needed,</p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>en_GB.UTF-8 UTF-8
+en_US.UTF-8 UTF-8
+</code></pre></div></div>
+<p>Generate the locales,</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># locale-gen
+</code></pre></div></div>
+<p>And set the system locale by editing <code class="language-plaintext highlighter-rouge">/etc/locale.conf</code> adding:</p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>LANG=en_GB.UTF-8
+</code></pre></div></div>
+
+<p>Set the keyboard layout persistently</p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code># vim /etc/vconsole.conf
+KEYMAP=uk
+</code></pre></div></div>
+
+<p>Set the host name</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># vim /etc/hostname
+</code></pre></div></div>
+<p><em>Note:</em> The only content of this file should be the name for this machine</p>
+
+<p>Add default addresses to <code class="language-plaintext highlighter-rouge">hosts</code> file</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># vim /etc/hosts
+</code></pre></div></div>
+
+<pre><code class="language-pre">127.0.0.1	localhost
+::1		localhost
+127.0.1.1	arch-usb.localdomain	arch-usb
+</code></pre>
+
+<p>Generate the initial minimal file system <code class="language-plaintext highlighter-rouge">initramfs</code></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># mkinitcpio -P
+</code></pre></div></div>
+
+<p>Set the root password</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># passwd
+</code></pre></div></div>
+
+<p>Add a non root user</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># useradd -m cmoralesmx
+# passwd cmoralesmx
+# usermod -aG wheel,audio,video,optical,storage cmoralesmx
+</code></pre></div></div>
+
+<p>Enable users in wheel group to execute anything as sudo</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># EDITOR=vim visudo
+</code></pre></div></div>
+<p><em>Note:</em> Search and uncomment the line about wheel users</p>
+
+<p>Remove unnecessary packages from the install</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># pacman -R modemmanager, mobile-broadband-provider-info
+</code></pre></div></div>
+
+<p>Install a bootloader
+<em>Note:</em> I was using grub but switched to systemd-boot which seems leaner.</p>
+
+<p>Because I am already using systemd-boot, the loader configuration and the
+entries should be available and up to date in <code class="language-plaintext highlighter-rouge">/boot</code></p>
+
+<p>Therefore, I just need to install the actual bootloader</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># bootctl install
+</code></pre></div></div>
+
+<p>At this point the base system is ready. For a headless computer this is enough.</p>
+
+<p>Optionally, I could install a Window Manager or a full Desktop Environment.
+I will cover that in the <a href="/blog/2020/arch_install_gui">next post</a></p>
+
+
+  </article>
+
+  
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+      var disqus_shortname  = 'think-code-cycle';
+      var disqus_identifier = '/blog/2020/arch-install';
+      var disqus_title      = "Installing Arch Linux on a Lenovo Legion 5P";
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  
+
+</div>
+
+    </div>
+
+    <!-- Footer -->
+
+    
+<footer class="sticky-bottom mt-5">
+  <div class="container">
+    &copy; Copyright 2020 Carlos A. Morales.
+    Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
+
+    
+    Last updated: December 20, 2020.
+    
+  </div>
+</footer>
+
+
+
+  </body>
+
+  <!-- jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
+  <!-- Bootsrap & MDB scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js" integrity="sha512-eUQ9hGdLjBjY3F41CScH3UX+4JDSI9zXeroz7hJ+RteoCaY+GP/LDoM8AO+Pt+DRFw3nXqsjh9Zsts8hnYv8/A==" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha512-M5KW3ztuIICmVIhjSqXe01oV2bpe248gOxqmlcYrEzAvws7Pw3z6BK0iGbrwvdrUQUhi3eXgtxp5I8PDo9YfjQ==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js" integrity="sha512-Mug9KHKmroQFMLm93zGrjhibM2z2Obg9l6qFG2qKjXEXkMp/VDkI4uju9m4QKPjWSwQ6O2qzZEnJDEeCw0Blcw==" crossorigin="anonymous"></script>
+
+  
+
+  
+
+
+<!-- Load Common JS -->
+<script src="/assets/js/common.js"></script>
+
+<!-- Load DarkMode JS -->
+<script src="/assets/js/dark_mode.js"></script>
+
+
+</html>
