@@ -19,66 +19,106 @@ nav: true
 ---
 Download the [PDF version](/assets/pdf/CarlosMoralesResume2020.pdf)
 
-The work done during my PhD sits at the intersection of Computer Science and 
-Biology. My project mainly focuses on applying Agent-Based Modelling to
-mammalian reproduction research. I am working under the supervision of
-Dr Dawn Walker and Prof. Alireza Fazelli.
+<blockquote class="statement">
+A resourceful full-stack software developer with hands-on
+professional experience. I am confident creating or working with complex
+systems. A philomath. An open source, clean code and best practices enthusiast
+with a new found passion for cloud computing.
+</blockquote>
 
-To summarize my PhD in a short paragraph, from a technical perspective, I create 
+**September 2016 - Present**, PhD in Computer Science, The University of
+Sheffield.
+
+My research sits at the intersection of Computer Science and Biology. The
+project mainly focuses on applying Agent-Based Modelling to mammalian
+reproduction research. I am working under the supervision of Dr Dawn Walker
+and Prof. Alireza Fazeli.
+
+To summarize my PhD in a short paragraph, from a technical perspective, I create
 computational models where many autonomous decision-making individuals bound
 by simple low-level rules encoded into the system will interact with each other
 and with the environment and, hopefully, after enough iterations, complex
 system-wide high-level behaviour will emerge as an outcome of those interactions.
-Although I refer to the modelling technique as Agent-Based Modelling (ABM),
-other areas of research use different names for the same technique, 
-i.e.: Individual-Based Modelling for ecologists.
 
-During this time, I have worked as a lab demonstrator supporting undergrad and
-MSc students in a variety of courses taught in Python, i.e.: Text Processing,
-Natural Language Processing, Biological Computing.
-
-As a side product of my PhD, a virtual reality (VR) serious game was created
-where you take the place of a spermatozoon and must face a series of obstacles
-to fertilise an egg while beating other sperms competing in the same task.
+As product of my PhD, a [virtual reality serious game](https://cmoralesmx.github.io/FertilizationVR_web/)
+was created where you take the place of a spermatozoon and must face a series
+of obstacles to fertilise an egg while beating other spermatozoa competing in
+the same task.
 This project has been invited for demonstration at a series of public talks
-"Sex-In-Three Cities" at the Universities of London, Nottingham, and Edinburgh
-sponsored by the Society for Reproduction and Fertility. We are looking for
-funding to continue this project!
+"[Sex-In-Three Cities](https://srf-reproduction.org/events/sex-in-three-cities-events/)"
+at the Universities of Nottingham, Edinburgh, and the Royal Veterinary College
+in London sponsored by the [Society for Reproduction and Fertility](https://srf-reproduction.org/).
+*We are looking for funding to continue this project!*
 
-Sep 2015 - Sept 2016, I completed an ***MSc in Computer Science*** with a strong
-focus in Natural Language Processing, for my thesis I applied Latent Semantic
-Analysis to study the "Textual Alignment of News Blogs".
+**September 2017 - September 2019**, ***Lab demonstrator***, The University of Sheffield
 
-May 2013 - Aug 2015, I was employed as **technical lead** at an enterprise
-services start-up in Queretaro, Mexico.
-My main responsibilities were process and requirement analysis, software
-implementation, and project administration of Java based solutions for
-electronic invoicing, stateful web services, data migrations, and email services. 
-I also lead a team of 7 junior developers on the final part of the development
-stage and later on the implementation of a custom ERP software for a medium sized
-enterprise. For a brief period of time, I was also in charge of the internal
-infrastructure of the start-up doing SAP Basis activities.
+In parallel to my research project, I provided support for undergraduate and
+MSc students on the practical sessions for Python-based courses, i.e.: Text
+Processing, Natural Language Processing, Biology-Inspired Computing.
 
-Sep 2010 - Feb 2013, I completed a ***bachelor degree*** (informatics) at the
-Polytechnic University of Morelos (UPEMOR) in Jiutepec, Mexico.
+----
+**September 2015 - September 2016**, ***MSc in Computer Science***, The University
+of Sheffield
+
+With a strong focus in Natural Language Processing, for my thesis I applied
+Latent Semantic Analysis to study the "Textual Alignment of News Blogs".
+
+----
+**May 2013 - August 2015**, ***Java developer/tech lead*** Enterprise Business
+Consulting, Queretaro, Mexico.
+
+I was successfully involved in many projects, as follows.
+
+- On the full life cycle of five Java based solutions for electronic invoicing
+and one custom email client.
+- I architected several stateful web services clients.
+- I architected and implemented data migration pipelines from legacy systems
+and from SAP ERP to our implementations.
+
+I am proud of my involvement as a tech lead of a team of 7 junior developers
+during the final eight months of development and later during the
+implementation stage of a custom ERP software for a medium sized
+enterprise. My participation was key for the successful delivery of this
+project qualified as high risk of failure prior to my involvement.
+
+----
+**September 2010 - February 2013**, ***BSc in Informatics***, UPEMOR, Jiutepec,
+Mexico
+
 For my thesis, I implemented and benchmarked an Asynchronous Bidirectional
-Associative Memory (ABAM). To cover my expenses I joined the IT department
-providing technical support at the university's computer labs. The activities
-carried involved software installations, computer maintenance.
+Associative Memory (ABAM).
 
-2008 - 2010, I worked as a **web developer** at an AD agency in Cuernavaca,
-Mexico. My work here consisted of developing PHP based web sites for their
-small-business clients. I was in charge of designing, implementation, and
- infrastructure.
-As the sole developer at the time, my work was key in supporting the agency's
+**September 2011 - September 2012**, ***Tech Support***, UPEMOR, Jiutepec,
+Mexico
+
+In parallel to my undergraduate studies, I joined the IT department providing
+technical support at the university's computer labs.
+
+My duties involved software installations, computer maintenance, and minor
+tech support to the students.
+
+----
+**2008 - 2010**, ***Web developer***, GrupoSol/Intermex, Cuernavaca, Mexico.
+
+I developed custom PHP web sites and portals from the ground up. Initially,
+I was only involved in design and implementation, later I was trusted with
+infrastructure activities.
+
+My work, as the sole developer at the time, was key in supporting the agency's
 transition from a print-focused business with minimal web operations to a
 web-focused AD agency with minimal print activity.
 
-2002 - 2008, I self-learned HTML and PHP programming and offered my service
-independently for a few years. Although, I was focused only in small business,
-I did create a larger scale portal which was the first version of the
-China-Mexico Chamber of Commerce. This was a three-lingual web portal when i18n 
-(internationalisation)  was still an exotic area of development.
+----
+**2002 - 2008**, ***PHP developer***, MaranathaMX, Cuernavaca, Mexico.
 
+I self-learned HTML 4.0 and PHP programming and offered my services
+independently for a few years catering specifically to small business.
+
+However, my proudest achievement was developing a larger portal which
+eventually became the first version of the China-Mexico Chamber of Commerce
+web portal. This was a three-lingual website/portal when internationalisation
+was still an "exotic" area of development.
+
+----
 
 Download the [PDF version](/assets/pdf/CarlosMoralesResume2020.pdf)
