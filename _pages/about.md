@@ -6,7 +6,7 @@ description: <a href="https://www.sheffield.ac.uk/dcs/">The UoS DCS</a> | PhD (t
 
 profile:
   align: right
-  image: portrait_CAMG.jpg
+  image: portrait_camg.jpg
   address: >
     <p>Office C+01,<br />The Pam Liversidge Building</p>
     <p>S1 3JD<br />
