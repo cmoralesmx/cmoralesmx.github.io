@@ -6,7 +6,7 @@ description: PhD (to be), MSc, BSc
 
 profile:
   align: right
-  image: portrait_CAMG.jpg
+  image: portrait_camg.jpg
   address: >
     <p>The Palm Liversidge Building, Office C+01</p>
     <p>On the corner of Broad Lane and Newcastle Street</p>
