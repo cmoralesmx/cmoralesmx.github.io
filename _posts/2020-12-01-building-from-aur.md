@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Building packages fom the AUR
+title: Building packages from the AUR
 date: 2020-12-01 20:01:00
 description: A simple guide for build packages from the AUR without helpers
 comments: true
@@ -14,17 +14,18 @@ src="{{ site.baseurl }}/assets/img/2020-12-01-aur.png">
 One of the interesting aspects of Arch Linux is its user-supported resources.
 This post will focus on one of those resources, the Arch User Repository (AUR)
 
-*"The Arch User Repository (AUR) is a community-driven repository for Arch users.
+<blockquote><p>The Arch User Repository (AUR) is a community-driven repository
+for Arch users.
 It contains package descriptions (PKGBUILDs) that allow you to compile a package
 from source with makepkg and then install it via pacman. The AUR was created to
 organize and share new packages from the community and to help expedite popular
-packages' inclusion into the community repository"*
+packages' inclusion into the community repository</p></blockquote>
 
 Therefore, we can think of it as a massive collection of software (in source
 form) not available in the official repositories.
 
 Some may feel building these packages is hard so they recommend the use of
-helpers for this task, i.e.: yay, pacman, and similars. But in many cases,
+helpers for this task, i.e.: yay, pacman, and similar. But in many cases,
 the build process is mostly automated by the build scripts available here.
 
 In my opinion, part of the reason for doing this my way is because I have

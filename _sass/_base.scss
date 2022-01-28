@@ -56,7 +56,7 @@ blockquote {
 
 .profile {
   margin-left: 1rem;
-  width: 100%;
+  width: 50%;
 
   .address {
     margin-bottom: 5px;
@@ -576,4 +576,28 @@ kbd {
     line-height: 1;
     padding: 2px 4px;
     white-space: nowrap;
+}
+
+blockquote {
+  font-style: italic;
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote.statement {
+  font-style: normal;
+  quotes: none;
+}
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+blockquote p {
+  display: inline;
 }

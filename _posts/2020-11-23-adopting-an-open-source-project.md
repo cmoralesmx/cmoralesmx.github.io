@@ -20,13 +20,13 @@ Alright, but, *why was I using R in the first place?*
 
 Well, a few days earlier I was happily immersed in the Python stack for all my
 plotting needs. More specifically, I was using [holoviews](http://holoviews.org/)
-with the bokeh backend.
+with the bokeh back end.
 I found this solution was simplifying my analytics pipelines while making it
 easy to produce interactive graphs in the Jupyter lab. All was good! Until...
 My progress was stopped by a [bug](https://github.com/holoviz/holoviews/issues/3892)
 with no known solution yet. This bug crashes the plotting application whenever
 an offset on the y-axis of the label is specified. Therefore, I needed to adapt.
-Firstly, I tried to work around it by changing to the matplotlib backend.
+Firstly, I tried to work around it by changing to the matplotlib back end.
 The results were slightly better. At least something was being plot. Although,
 the error bars and labels were failing to align with their corresponding bars.
 And the plots produced looked a bit basic or dull.
@@ -40,7 +40,7 @@ src="{{ site.baseurl }}/assets/img/2020-11-23-adopting-oss-project-1.png">
     <div class="col-sm-2">&nbsp;</div>
 </div>
 <div class="caption">
-Plotting with holoviews using the matplotlib backed with missaligned labels
+Plotting with holoviews using the matplotlib backed with misaligned labels
 and error bars.
 </div>
 
@@ -50,7 +50,7 @@ a bit weird compared to what I am used to in Python. But given my current
 circumstances, I gave it another try. 
 A couple of the packages available were able to produce plots more closely
 resembling what I needed, these were the core plotting functions and `ggplot2`
-with the last requiring the least involevment for producing more visually
+with the last requiring the least involvement for producing more visually
 appealing plots than the former. The only feature missing was the splitting
 of the axis.  
 

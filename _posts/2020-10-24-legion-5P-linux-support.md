@@ -20,7 +20,7 @@ src="{{ site.baseurl }}/assets/img/2020-10-24-manjaro.png">
 Setting up Manjaro was a trivial task. The automated setup completed without a
 hitch in about 10-15 minutes without a live internet connection.
 
-After rebooting, I was gladly surprised when I realized the Nvidia drivers were
+After rebooting, I was gladly surprised when I realized the nvidia drivers were
 already installed even though the setup was done offline! Not that installing
 those drivers was especially hard in the last few years as prior versions
 required doing,
@@ -39,7 +39,7 @@ Next is a list of issues fixed with links to the fixing procedures
 
 ## Issues fixed.
 - [Noisy PC speaker on errors](#noisy-pc-speaker-on-errors)
-- [Touchpad nonresponsive](/blog/2020/legion-5P-touchpad-nonresponsive-fix)
+- [Touchpad non responsive](/blog/2020/legion-5P-touchpad-nonresponsive-fix)
 - Hybrid graphics causing blank HDMI-out
   - [Solution using discrete graphics only](#hdmi-out-with-discrete-graphics-and-brightess-control)
   - [Solution patching the kernel to fix the hybrid mode](/blog/2020/legion-5P-hdmi-out-with-hybrid-graphics)
@@ -52,7 +52,7 @@ The PC speaker can be easily disabled globally, by executing as ROOT
 # echo "blacklist pcspkr" | tee /etc/modprobe.d/nobeep.conf
 ```
 ---
-### HDMI-out with discrete graphics and brightess control
+### HDMI-out with discrete graphics and brightness control
 
 To use discrete graphics, this must be enabled in the BIOS of the computer.
 After doing that, the discrete GPU will drive the HDMI-out and USB-c ports,
