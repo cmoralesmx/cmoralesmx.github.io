@@ -62,7 +62,7 @@ $ sudo pacman -U ~/aur/packages/cuda-10.2-*.tar.zst
 $ sudo pacman -U ~/aur/packages/visual-studio-code-bin-1.51.1-1-x86_64.pkg.tar.zst
 ```
 *Note:* The following patch must be installed after installing a new kernel.
-In my case, the last step also istalled a patched kernel against which this module
+In my case, the last step also installed a patched kernel against which this module
 was built. If for any reason the patched module and the kernel lost sync, the
 module must be compiled again for the new kernel
 
