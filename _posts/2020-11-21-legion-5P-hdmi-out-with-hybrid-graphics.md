@@ -57,7 +57,7 @@ legion5P kernel:  ? entry_SYSCALL_64_after_hwframe+0x44/0xa9
 {% endhighlight %}
 </div>
 
-I checked the Nvidia developer forum and the Manjaro forum, luckily the [solution]((https://forums.developer.nvidia.com/t/ryzen-7-gtx-1660ti-blank-screen-on-external-outputs-in-hybrid-graphics-mode/157800/4))
+I checked the Nvidia developer forum and the manjaro forum, luckly the [solution](https://forums.developer.nvidia.com/t/ryzen-7-gtx-1660ti-blank-screen-on-external-outputs-in-hybrid-graphics-mode/157800/4)
 was already known and a [patch](https://patchwork.kernel.org/project/linux-arm-kernel/patch/20200513133245.6408-5-m.szyprowski@samsung.com/)
 was available for the kernel.
 After checking if the patch was already applied to Manjaro or upstream latest
