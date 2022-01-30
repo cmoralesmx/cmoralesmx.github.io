@@ -1,7 +1,6 @@
 ---
 layout: about
 title: about
-permalink: /
 description: <a href="https://www.sheffield.ac.uk/dcs/">The UoS DCS</a> | PhD (to be) in Computer Science<br /> ABM, GPGPU, HPC, NLP | Python, CUDA, R, Java, PHP, JavaScript
 
 profile:
