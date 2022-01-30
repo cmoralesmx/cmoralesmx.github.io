@@ -1,7 +1,7 @@
 ---
 layout: about
 title: resume
-permalink: /resume/
+permalink: /
 description: PhD (to be), MSc, BSc
 
 profile:
@@ -25,11 +25,14 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 nav: true
 ---
-Download the [PDF version](/assets/pdf/CarlosMoralesResume2020.pdf)
 
 <blockquote class="statement">
-I am a competent, scrupulous, and motivated collaborator who bears knowledge and professional expertise. I can bring leadership, support, and a resourceful mindset to any team. With a history of achievement, I thrive taking ownership of challenging problems, observing best practices, and aiding my employer in achieving their objectives. As a philomath, I have a passion for continuous professional development. I can add value to your organization by ensuring your customers and clients receive the best service possible. Thanks to the experience gained from previous roles, I can be relied upon to deliver everything I set out to achieve. You can be sure I am always seeking ways to help my employer grow.
+<p>I am a competent, scrupulous, and motivated collaborator who bears knowledge and professional expertise. I can bring leadership, support, and a resourceful mindset to any team. I thrive taking ownership of challenging problems, observing best practices, and aiding my employer in achieving their objectives.</p>
+<p>As a philomath, I have a passion for continuous professional development. I can add value to your organization by ensuring your customers and clients receive the best service possible.</p>
+<p>Thanks to the experience gained from previous roles, I can be relied upon to deliver everything I set out to achieve. You can be sure I am always seeking ways to help my employer grow.</p>
 </blockquote>
+
+<br />
 
 **September 2016 - Present**, ***PhD in Computer Science***, The University of
 Sheffield, UK.
@@ -134,5 +137,3 @@ was still an "exotic" area of development.
 Experience gained in: PHP, MySQL
 
 ----
-
-Download the [PDF version](/assets/pdf/CarlosMoralesResume2020.pdf)

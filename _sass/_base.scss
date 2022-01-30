@@ -24,11 +24,18 @@ a, table.table a {
 }
 
 blockquote {
-  background: var(--global-bg-color);
-  border-left: 2px solid var(--global-theme-color);
+  background: var(--global-blockquote-bg-color);
+  border-right: 2px solid var(--global-theme-color);
   margin: 1.5em 10px;
   padding: 0.5em 10px;
-  font-size: 1.2rem;
+  font-size: 1rem;
+  text-align: right;
+  max-width: 72%;
+
+  /*Box Shadow - (Optional)*/
+  -moz-box-shadow: 2px 2px 15px var(--global-blockquote-shadow);
+  -webkit-box-shadow: 2px 2px 15px var(--global-blockquote-shadow);
+  box-shadow: 2px 2px 15px var(--global-blockquote-shadow);
 }
 
 // Math
@@ -72,8 +79,9 @@ blockquote {
 @media (min-width: 576px) {
   .profile {
     width: 30%;
+    max-width: 234px;
     .address {
-      p { display: block; }
+      p { display: block; margin-left: 10px;}
     }
   }
 }
@@ -576,28 +584,4 @@ kbd {
     line-height: 1;
     padding: 2px 4px;
     white-space: nowrap;
-}
-
-blockquote {
-  font-style: italic;
-  background: #f9f9f9;
-  border-left: 10px solid #ccc;
-  margin: 1.5em 10px;
-  padding: 0.5em 10px;
-  quotes: "\201C""\201D""\2018""\2019";
-}
-blockquote.statement {
-  font-style: normal;
-  quotes: none;
-}
-blockquote:before {
-  color: #ccc;
-  content: open-quote;
-  font-size: 4em;
-  line-height: 0.1em;
-  margin-right: 0.25em;
-  vertical-align: -0.4em;
-}
-blockquote p {
-  display: inline;
 }
