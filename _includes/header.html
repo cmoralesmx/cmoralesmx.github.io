@@ -49,12 +49,6 @@
             </a>
           </li>
           <!-- Other pages -->
-          <!-- Resume -->
-          <li class="nav-item {% if page.url contains 'blog' %}active{% endif %}">
-            <a class="nav-link" href="{{ 'https://resume.cm-cloudarchitect.com' | absolute_url }}">
-              resume
-            </a>
-          </li>
           {% assign sorted_pages = site.pages | sort: "title" %}
           {% for p in sorted_pages %}
           {% if p.nav and p.autogen == nil %}
