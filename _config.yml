@@ -12,7 +12,6 @@ description: > # the ">" symbol means to ignore newlines until "footer_text:"
 footer_text: >
   Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
-  Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
 
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: 🔥 # the emoji used as the favicon
@@ -81,7 +80,7 @@ panelbear_analytics: XXXXXXXXX # panelbear analytics site ID
 
 blog_name: think, code, cycle # your blog must have a name for it to show up in the nav bar
 blog_description: Writings about things I like
-permalink: /blog/:year/:title/
+permalink: /blog/:year/:title.html
 
 # Pagination
 pagination:
@@ -99,10 +98,10 @@ collections:
     defaults:
       layout: post
     output: true
-    permalink: /news/:path/
+    permalink: /news/:path.html
   projects:
     output: true
-    permalink: /projects/:path/
+    permalink: /projects/:path.html
 
 news_limit: 5
 
@@ -176,9 +175,9 @@ jekyll-archives:
     tag: archive-tag
     category: archive-category
   permalinks:
-    year: '/blog/:year/'
-    tag: '/blog/tag/:name/'
-    category: '/blog/category/:name/'
+    year: '/blog/:year.html'
+    tag: '/blog/tag/:name.html'
+    category: '/blog/category/:name.html'
 
 # -----------------------------------------------------------------------------
 # Jekyll Scholar
