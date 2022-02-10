@@ -2,7 +2,7 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: blank # the website title (if blank, full name will be used instead)
+title: My Resume, Carlos A. Morales # the website title (if blank, full name will be used instead)
 first_name: Carlos
 middle_name: A.
 last_name: Morales
@@ -70,7 +70,7 @@ rss_icon: false
 contact_note: >
   The best way to reach me is via email.
 
-google_analytics: UA-4136342-19 # out your google-analytics code
+google_analytics: G-LS1K9FNBE7 # out your google-analytics code
 panelbear_analytics: XXXXXXXXX # panelbear analytics site ID
 
 # -----------------------------------------------------------------------------
