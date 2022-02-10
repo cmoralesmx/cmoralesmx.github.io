@@ -2,7 +2,7 @@
 layout: about
 title: resume
 permalink: /
-description: PhD (to be), MSc, BSc
+description: SAA, DVA | PhD (to be), MSc, BSc
 
 profile:
   align: right
