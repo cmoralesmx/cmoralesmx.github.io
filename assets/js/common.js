@@ -11,6 +11,6 @@ $(document).ready(function() {
     .then(() => fetch('https://rqv1z9daf2.execute-api.us-east-1.amazonaws.com/Prod/get'))
     .then(response => response.json())
     .then((data) => {
-        document.getElementById('total-visitors').innerText = 'Total visitors: ' + data.count
+        document.getElementById('total-visitors').innerText = 'Total visitors since the 1st of February, 2022: ' + data.count
     })
 });
