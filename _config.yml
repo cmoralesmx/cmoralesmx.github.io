@@ -215,12 +215,12 @@ scholar:
 responsive_image:
   template: _includes/responsive_img.html
   # Quality to use when resizing images.
-  default_quality: 80
+  default_quality: 75
   sizes:
     - width: 480
     - width: 800
     - width: 1400
-      quality: 90
+      quality: 75
   # Strip EXIF and other JPEG profiles. Helps to minimize JPEG size.
   strip: true
 
