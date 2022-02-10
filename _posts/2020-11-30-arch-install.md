@@ -8,7 +8,7 @@ comments: true
 <div class="row mt-3 mb-3">
     <div class="col-sm">
         <img class="img-fluid rounded z-depth-1"
-src="{{ site.baseurl }}/assets/img/2020-12-02-arch.png">
+src="{{ site.baseurl }}/assets/img/2020-11-30-arch.jpg">
     </div>
 </div>
 <div class="caption">
