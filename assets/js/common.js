@@ -7,8 +7,8 @@ $(document).ready(function() {
     });
     $('.navbar-nav').find('a').removeClass('waves-effect waves-light');
 
-    fetch('https://rqv1z9daf2.execute-api.us-east-1.amazonaws.com/Prod/put')
-    .then(() => fetch('https://rqv1z9daf2.execute-api.us-east-1.amazonaws.com/Prod/get'))
+    fetch('https://api.cm-cloudarchitect.com/put')
+    .then(() => fetch('https://api.cm-cloudarchitect.com/get'))
     .then(response => response.json())
     .then((data) => {
         document.getElementById('total-visitors').innerText = 'Total visitors since the 1st of February, 2022: ' + data.count
