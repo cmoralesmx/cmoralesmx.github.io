@@ -57,6 +57,10 @@ in London sponsored by the [Society for Reproduction and Fertility](https://srf-
 
 The project was awarded best-poster prizes at international (Fertility'19) and regional (INSIGNEO showcase 2019) conferences.
 
+ The main funding for this project was awarded as scholarship from Mexico's
+[Council of Science and Technology](https://www.conacyt.gob.mx/). I am
+thankful for their support.
+
 Experience gained in: CUDA, C, Python, Matlab, OpenGL, public speaking, scientific research, project management, data management, data analysis.
 
 **September 2017 - September 2019**, ***Lab demonstrator***, The University of Sheffield, UK
