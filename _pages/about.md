@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-description: A cloud-computing-enthusiast information engineer who is also a bit of a philomath with eclectic  ***interests***, but mostly just a simple person, really.
+description: A cloud-computing-enthusiast information engineer who is also a bit of a philomath with eclectic interests, but mostly just a simple person, really.
 
 profile:
   align: right
