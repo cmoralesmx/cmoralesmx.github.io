@@ -2,25 +2,21 @@
 layout: about
 title: about
 permalink: /
-description: <a href="https://www.sheffield.ac.uk/dcs/">The UoS DCS</a> | PhD (to be) in Computer Science<br /> ABM, GPGPU, HPC, NLP | Python, CUDA, R, Java, JavaScript
+description: A cloud-computing-enthusiast information engineer who is also a bit of a 
+philomath with eclectic  ***interests***, but mostly just a simple person, really.
 
 profile:
   align: right
   image: portrait_camg.jpg
   address: >
-    <p>Office C+01,<br />The Pam Liversidge Building</p>
-    <p>S1 3JD<br />
-    <p>Sheffield, UK</p>
+    <p>Currently, based</p>
+    <p>somewhere in</p>
+    <p>Morelos, Mexico</p>
 
 news: false  # includes a list of news items
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
-
-Hello, I am Carlos A. Morales,
-
-A cloud-computing-enthusiast information engineer who is also a bit of a 
-philomath with eclectic  ***interests***, but mostly just a simple person, really.
 
 Recently, I've been writing on my blog [think, code, cycle](/blog) about the 
 topics of my interests, some of which are,
