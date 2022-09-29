@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-description: <a href="https://www.sheffield.ac.uk/dcs/">The UoS DCS</a> | PhD (to be) in Computer Science<br /> ABM, GPGPU, HPC, NLP | Python, CUDA, R, Java, PHP, JavaScript
+description: <a href="https://www.sheffield.ac.uk/dcs/">The UoS DCS</a> | PhD (to be) in Computer Science<br /> ABM, GPGPU, HPC, NLP | Python, CUDA, R, Java, JavaScript
 
 profile:
   align: right
@@ -17,9 +17,34 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
+Hello, I am Carlos A. Morales.
+
+A cloud computing enthusiast software developer who is also  bit of a 
+philomath with eclectic  ***interests***, but mostly just a simple person really.
+
+Recently, I've been writing on my blog [think, code, cycle](/blog) about the 
+topics I care about some of which are,
+
+- ***Cloud Computing***. Besided holding [AWS](https://aws.amazon.com/)
+Solutions Architect and Developer certifications, I recently completed the 
+[Cloud Resume Challenge](https://cloudresumechallenge.dev/), a hands-on capstone 
+project coverign a broad spectrum of cloud skills. The whole experience, which
+I wrote about in [this post](/blog/2022-02-22-my-cloud-resume-challenge-in-aws.html), was more testing than anticipated yet very rewarding on completion. 
+Being passionate about the cloud, and aiming to become multi-cloud capable, I am
+now planning a second go at tackling this involved project under [GCP](https://cloud.google.com).
+- ***Travelling***. Nothing beats seeing new places with my own eyes!
+The thrill of experiencing other cultures and their cuisines fascinates me. I 
+am especially keen in doing so by getting out of the city centres, the typical
+tourists spots, and getting more into the countryside.
+- ***Cycling***. Both due to its benefits for my physical and mental health, and
+because I thrive pushing myself to go further, faster. This is a highly enoyable
+ activity for me. I keep track of my outings using [Strava](https://strava.com/athletes/20777326).
+
+<blockquote>Life is too short to live it vicariously through others.</blockquote>
+
 I am currently on the final stretch of a PhD project where I have been applying
-**Agent-Based Modelling** to study complex biological phenomena using [FlameGPU](http://www.flamegpu.com/)
-and **multiprocessing** both in HPC and commodity hardware environments.
+**Agent-Based Modelling** to study complex biological phenomena using 
+highly-parallel processors in both High Performance Computing (HPC) and commodity hardware environments.
 
 Some achievements of this project:
 - It has been awarded a few best poster prizes at international conferences and
@@ -33,27 +58,3 @@ thankful for their support.
 
 My [**resume** is available](/assets/pdf/CarlosMoralesResume2020.pdf) with detail about previous work
 experience and education history.
-
-I am a bit of a philomath with eclectic ***interests*** and just recently started
-writing about it on my blog [think, code, cycle](/blog). The topics I care about are,
-- ***OSS development***. I maintain [gggaps](https://www.r-pkg.org/pkg/gggap){:target="\_blank"}, an R package for easily adding splits to the vertical axis of plots. I have contributed code to other projects, some are available at my [GitHub repository](https://github.com/cmoralesmx)
-- ***GNU/Linux***. My main computer runs on [Arch Linux](https://www.archlinux.org/){:target="\_blank"}.
-My [home network](/blog/2020/home-network-fully-run-on-linux), like most of the
-world's infrastructure, runs on GNU/Linux.
-- ***Cloud Computing***. I am preparing to get certified as an [AWS](https://aws.amazon.com/)
-solutions architect
-- ***Reading***. I quite enjoy getting immersed in non-fiction works especially
-of the biography, history, and travelogue type. For some time, I kept track of
-the books I read using [Goodreads](https://www.goodreads.com/user/show/16552304-carlos).
-Nowadays, my reading is focused on scientific literature and technical documents.
-- ***Travelling***. Nothing beats seeing new places with my own eyes!
-I find myself fascinated by the experience of experiencing other cultures and
-their cuisines while getting a boost on my problem solving skills. Sadly, but
-understandably, this is on pause at the moment.
-- ***Road cycling***. I have had the fortune of living in a city with plenty of hilly
-roads to enjoy, some of national hill climbing fame while others have been
-featured in a few of the toughest cycling routes in the UK. I thrive pushing
-myself to go further, faster. I keep track of my outings using [Strava](https://strava.com/athletes/20777326).
-
-
-<blockquote>Life is too short to live it vicariously through others.</blockquote>
