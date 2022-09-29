@@ -20,7 +20,7 @@ package was adding unnecessary work for me. And because using packages from
 a different distribution is not supported or recommended, I decided to
 migrate my system to Arch Linux.
 
-Before going any further, I must apologise, this post is purely technical.
+Before going any further prease bear in mind this post is heavily technical.
 It follows the official [installation guide](
 https://wiki.archlinux.org/index.php/installation_guide),
 which is a must read for installing Arch, but the purpose of this post is to
