@@ -10,10 +10,10 @@ changing the version of the drivers. I tried with kernel versions 5.4, to 5.10.
 Only version 5.6 appeared to have everything working correctly.
 
 Therefore, for a couple of days, I was using kernel v5.6 and everything worked,
-switchable graphics worked, LCD brightness control worked, and HDMI-out! 
+switchable graphics worked, the LCD brightness-control worked, and HDMI-out! 
 Everything was good until it was not.
-Surprisingly, a system update retired v5.6 of my system. I forgot this version
-had reached EOL earlier this year!
+Surprisingly, a system update retired v5.6 of my system. I totally forgot this version
+of the kernel had reached EOL earlier this year!
 
 So, I had no option but to move to a newer kernel and try to fix this issue.
 I opted for v5.9 and proceeded to check the journal after a restart.
@@ -64,11 +64,7 @@ After checking if the patch was already applied to Manjaro or upstream latest
 versions, I could not find anything. So, it was clear I needed to patch and
 build my own kernel.
 
-The last time I compiled a kernel was about 15+ years ago with my first Arch
-installation! But, the current task did not seem so difficult and the patches
-were short so I decided to try.
-
-Not being familiar with the task, I followed a combination of [this guide](https://archived.forum.manjaro.org/t/how-to-compile-the-mainline-kernel-the-manjaro-way/51700/10)
+I followed a combination of [this guide](https://archived.forum.manjaro.org/t/how-to-compile-the-mainline-kernel-the-manjaro-way/51700/10)
 and [Patching_packages](https://wiki.archlinux.org/index.php/Patching_packages),
 the end result was as follows,
 
@@ -90,13 +86,12 @@ $ cd ~/git && buildpkg -p linux59
 ```
 $ cd ~/git/linux59 && makepkg -Csf
 ```
-7. I located where the packages were stored and moved them to a suitable 
-location for future use
-8. Installed the kernel and the headers
+7. archived the produced packages for future use
+8. installed the kernel and the headers
 ```
 $ sudo pacman -U linux59-5.9.8-2-x86_64.pkg.tar.zst linux59-headers-5.9.8-2-x86_64.pkg.tar.zst
 ```
-9. rebooted, selected the new kernel  
+9. rebooted, selecting the new kernel  
 
 The system booted but there was no video. I tried reinstalling the drivers but
 the result was the same. Further examination of the journal with,
@@ -104,28 +99,28 @@ the result was the same. Further examination of the journal with,
 $ journalctl -b0 -p4
 ```
 Showed that, in my first attempt, I failed to disable the option from **Step 4**.
-As a result, the fix was incomplete! After disabling the option, the boot
-process was still ending on a blank screen but a different set of errors were
-being recorded in the journal.
+As a result, the fix was incomplete! Disabling the option still lead to the boot
+process ending on a blank screen but a different set of errors were recorded in 
+the journal.
 
-Firstly, error `AMD-Vi: Unable to read/write to IOMMU perf counter` which calls
-for a GRUB parameter (iommu=soft).  
-Then, `Failed to get backlight or LED device 'backlight:acpi_video0': No such device` 
-which also needs a GRUB parameter (acpi_backlight=vendor)
+Firstly, the error `AMD-Vi: Unable to read/write to IOMMU perf counter` should 
+be fixed  by adding a GRUB parameter (iommu=soft).  
+Then, `Failed to get backlight or LED device 'backlight:acpi_video0': No such device`, 
+should also be fixed by adding a GRUB parameter (acpi_backlight=vendor)
 
 To add those two parameters using GRUB I did,
 ```
 $ sudo vim /etc/default/grub
 ```
-and added `iommu=soft acpi_backlight=vendor` to the `GRUB_CMDLINE_LINUX_DEFAULT`
+and appended `iommu=soft acpi_backlight=vendor` to the `GRUB_CMDLINE_LINUX_DEFAULT`
 variable.  
-Then, to update grub I did:
+Then, updated grub by doing:
 ```
 $ sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-The following reboot revealed a new problem with `i2c-nvidia-gpu`, which
- was also patched in the kernel. The solution was found [here](https://bugzilla.kernel.org/show_bug.cgi?id=206653).
+The following reboot revealed a new problem with `i2c-nvidia-gpu`, which was 
+fixed by another kernel patch. The solution was found [here](https://bugzilla.kernel.org/show_bug.cgi?id=206653).
 
 _Note_: At this point, my fork of the kernel with the corresponding patches is 
 stored in my [github repo](https://github.com/cmoralesmx/linux59/tree/hybrid_video).
@@ -138,35 +133,36 @@ were not compatible with my custom kernel. Therefore, I needed to compile the
 required modules.  
 
 I went back to the Manjaro repo and searched for the package 
-`hybrid-amd-nvidia-455xx-prime` but there is no such package!
-How Manjaro handles hybrid video then? I traced the installation of the drivers
+`hybrid-amd-nvidia-455xx-prime` but there was no such package!
+How does Manjaro handle hybrid videon? I traced the installation of the drivers
 and found that `/var/lib/mhwd/db/pci/graphic_drivers/hybrid-amd-nvidia-455xx-prime/MHWDCONFIG`
-contains all the details needed. The actual packages required are listed as,
+contains all the details needed. The actual packages needed are,
 ```
 DEPENDS="nvidia-455xx-utils nvidia-prime"
 DEPENDS_64="lib32-nvidia-455xx-utils"
 DEPKMOD="nvidia-455xx"
 ```
-To build these packages, I followed a [short guide](https://medium.com/@evintheair/building-a-custom-kernel-in-manjaro-linux-186da6a1cedf)
+To build these packages, I followed this [short guide](https://medium.com/@evintheair/building-a-custom-kernel-in-manjaro-linux-186da6a1cedf)
 
-I cloned the build scripts for each of the single packages from Manjaro's repo and each was built as follows,  
+For building them, I cloned their build scripts for the individual packages
+from Manjaro's repo and each was built as follows,  
 ```
 $ buildpkg -p nvidia-455xx-utils
 ```
-produced: `nvidia-455xx-utils-455.45.01-1-x86_64.pkg.tar.zst`  
+producing: `nvidia-455xx-utils-455.45.01-1-x86_64.pkg.tar.zst`  
 ```
 $ buildpkg -p lib32-nvidia-455xx-utils
 ```
-produced: `lib32-nvidia-455xx-utils-455.45.01-1-x86_64.pkg.tar.zst` and `lib32-opencl-nvidia-455xx-455.45.01-1-x86_64.pkg.tar.zst`
+producing: `lib32-nvidia-455xx-utils-455.45.01-1-x86_64.pkg.tar.zst` and `lib32-opencl-nvidia-455xx-455.45.01-1-x86_64.pkg.tar.zst`
 ```
 $ buildpkg -p nvidia-455xx
 ```
-produced: `linux59-nvidia-455xx-455.45.01-2-x86_64.pkg.tar.zst`
+producing: `linux59-nvidia-455xx-455.45.01-2-x86_64.pkg.tar.zst`
 
 Once built, the packages were moved to `/var/cache/manjaro-tools/pkg/stable/x86_64`
 
 I thought because I was building the packages the Manjaro way, that location
-could be a default sensibly prepared to enable installing using `mhwd` in the
+could be a default path prepared to enable installing using `mhwd` in the
 traditional way but trying to do so proved this was not the case. My packages
 were being ignored.
 
@@ -179,7 +175,7 @@ Therefore, after gathering the needed packages in a specific directory
 ```
 $ sudo pacman -U ~/git/custom_kernel_pkgs/nvidia-455xx-utils-455.45.01-1-x86_64.pkg.tar.zst ~/git/custom_kernel_pkgs/linux59-nvidia-455xx-455.45.01-1-x86_64.pkg.tar.zst  ~/git/custom_kernel_pkgs/opencl-nvidia-455xx-455.45.01-1-x86_64.pkg.tar.zst
 ```
-Another reboot and still the same error, 
+Another reboot later still got me the same error, 
 > `Nvidia: disagrees about version of symbol module_layout.`
 
 What was going on?  
@@ -206,7 +202,7 @@ $ mv *.tar.zst ~/git/custom_pkgs/
 $ sudo pacman -U ~/git/custom_pkgs/linux59-nvidia-455xx-455.45.01-1-x86_64.pkg.tar.zst
 ```
 
-Another reboot, and finally, after these attempts and many others non-documented
+Another reboot and finally, after these attempts and many others non-documented
 here, this final attempt was successful!
 
 The HDMI-out was finally working in hybrid graphics mode and there were no
@@ -214,12 +210,13 @@ kernel errors due to the Nvidia drivers. Success!
 
 The only thing missing is the display brightness.
 
-Based on my experience with this last part, I think by building the modules with
-`buildpkg`, the modules were compiled against a stock kernel every time. Whereas,
-using `makepkg` no chroot environment is recreated for each build or whatever
-kernel is in the system is referenced for the build so the packages are built
-against the correct kernel. I still need to check what the specific difference
-is between building with one or the other tool. I may cover that in  another post.
+A side note: Based on my experience with this last part, I think by building 
+the modules with `buildpkg`, the modules were compiled against a stock kernel 
+every time. Whereas, using `makepkg` no chroot environment is recreated for 
+each build or whatever kernel is in the system is referenced for the build so 
+the packages are built against the correct kernel. I still need to check what 
+the specific difference is between building with one or the other tool. I may 
+cover that in  another post.
 
-That is it for now. Thanks for reading.
+That is it for now. Congratulations if you made it to the end
 
