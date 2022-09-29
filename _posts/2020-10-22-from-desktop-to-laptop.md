@@ -65,7 +65,7 @@ years, feels like a grotesque experience.
 Therefore, I decided to stick to GNU/Linux and try to sort any issues myself.
 
 But I will leave that for another post where I am planning to document
-the [Linux support on the Lenovo Legion 5P](/blog/2020/legion-5P-linux-support/)
+the [Linux support on the Lenovo Legion 5P](/blog/2020/legion-5P-linux-support.html)
 
 <div class="row mt-3 mb-3">
     <div class="col-sm">
