@@ -45,7 +45,7 @@ like a grotesque experience I prefer to avoid.
 Therefore, I decided to stick with GNU/Linux and try to sort any issues myself.
 
 I am planning to use this space to document my experience with this laptop and 
-GNU/Linux through a series of posts. The first of them, [Linux support on the Lenovo Legion 5P](/blog/2020/legion-5P-linux-support.html), is available now. Go have a read!  
+GNU/Linux through a series of posts. The first of them, [Linux support on the Lenovo Legion 5P](/blog/2020/legion-5P-linux-support/), is available now. Go have a read!  
 
 <div class="row mt-3 mb-3">
     <div class="col-sm">
