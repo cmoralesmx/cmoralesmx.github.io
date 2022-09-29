@@ -182,5 +182,5 @@ Therefore, I just need to install the actual bootloader
 At this point the base system is ready. For a headless computer this is enough.
 
 Optionally, I could install a Window Manager or a full Desktop Environment.
-I will cover that in the [next post](/blog/2020/arch_install_gui)
+I will cover that in the [next post](/blog/2020/arch_install_gui.html)
 
