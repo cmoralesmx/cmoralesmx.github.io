@@ -41,7 +41,7 @@ Next is a list of issues fixed with links to the fixing procedures
 - [Noisy PC speaker on errors](#noisy-pc-speaker-on-errors)
 - [Touchpad non responsive](/blog/2020/legion-5P-touchpad-nonresponsive-fix)
 - Hybrid graphics causing blank HDMI-out
-  - [Solution using discrete graphics only](#hdmi-out-with-discrete-graphics-and-brightess-control)
+  - [Solution using discrete graphics only](#hdmi-out-with-discrete-graphics-and-brightness-control)
   - [Solution patching the kernel to fix the hybrid mode](/blog/2020/legion-5P-hdmi-out-with-hybrid-graphics)
 
 ---
