@@ -4,6 +4,7 @@ title: Legion 5P, HDMI-out with hybrid graphics
 date: 2020-11-21 20:00:00
 description: Steps to fix the HDMI-out port using hybrid graphics in Lenovo Legion 5P
 comments: true
+tags: linux
 ---
 Firstly, I tested if this was fixed in a different kernel version and by
 changing the version of the drivers. I tried with kernel versions 5.4, to 5.10.
