@@ -4,6 +4,7 @@ title: Adopting an Open Source Software project
 date: 2020-10-22 21:01:00
 description: How I ended up as a maintainer of an OSS project
 comments: true
+tags: code
 ---
 A few days ago, I needed to produce some bar plots. However, the distribution
 of the data I was working with was much higher on one side of the plot while
