@@ -4,6 +4,7 @@ title: Home network fully running on GNU/Linux
 date: 2020-10-27 20:01:00
 description: Brief detail of my local network which runs on GNU/Linux
 comments: true
+tags: linux
 ---
 <div class="row mt-3 mb-3">
   <div class="col-sm-2"></div>
