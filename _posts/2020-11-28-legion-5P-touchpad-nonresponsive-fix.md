@@ -4,6 +4,7 @@ title: Legion 5P, touchpad non responsive fix
 date: 2020-11-28 20:01:00
 description: Steps to fix the touchpad non responsive issue in Lenovo Legion 5P
 comments: true
+tags: linux
 ---
 The Legion 5P-15ARH05H has an MSFT0001:00 06CB:7F28 touchpad which was not
 responding to input. A fix is mentioned in this [linux.org thread](https://www.linux.org/threads/lenovo-legion-5-touchpad.29536/page-2)
