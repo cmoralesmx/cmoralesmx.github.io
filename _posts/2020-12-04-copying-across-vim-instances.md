@@ -4,6 +4,7 @@ title: Copying and Pasting between VIM instances
 date: 2020-12-04 20:01:00
 description: How to copy and paste text from one VIM instance to another
 comments: true
+tags: vim
 ---
 
 One of the many features of the VIM editor is its multiple clipboards, 
