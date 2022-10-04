@@ -4,6 +4,7 @@ title: Installing Arch Linux on a Lenovo Legion 5P
 date: 2020-11-30 20:01:00
 description: The steps I followed for installing Arch Linux on my laptop
 comments: true
+tags: linux, arch
 ---
 <div class="row mt-3 mb-3">
     <div class="col-sm">
