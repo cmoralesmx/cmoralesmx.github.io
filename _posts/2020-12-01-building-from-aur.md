@@ -4,6 +4,7 @@ title: Building packages from the AUR
 date: 2020-12-01 20:01:00
 description: A simple guide for build packages from the AUR without helpers
 comments: true
+tags: arch, linux
 ---
 <div class="row mt-3 mb-3">
     <div class="col-sm">
