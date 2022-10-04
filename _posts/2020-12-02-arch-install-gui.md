@@ -4,6 +4,7 @@ title: Installing Arch Linux in a Lenovo Legion 5P, adding a GUI
 date: 2020-12-02 20:01:00
 description: The second part of installing Arch on my laptop, the Graphical User Interface
 comments: true
+tags: linux, arch
 ---
 <div class="row mt-3 mb-3">
     <div class="col-sm">
