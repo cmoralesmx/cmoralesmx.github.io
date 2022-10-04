@@ -656,4 +656,10 @@ html.transition *:after {
   border-top: thin solid lightgray;
   margin-top: 30px;
   padding-top: 30px;
+
+  .badge {
+    background-color: var(--global-theme-color);
+    color: var(--global-text-color);
+    padding: 4px 7px;
+  }
 }
