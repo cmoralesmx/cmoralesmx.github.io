@@ -3,6 +3,7 @@ layout: post
 title: Using git to track your dot files
 date: 2020-12-03 22:01:00
 description: How to use git for tracking changes to your configuration files
+tags: linux, git
 ---
 
 <div class="row mt-3 mb-3">
