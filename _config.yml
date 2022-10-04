@@ -227,8 +227,8 @@ display_tags: ['arch', 'cloud', 'code', 'cycling', 'git', 'linux', 'quotes', 'vi
 
 scholar:
 
-  last_name: [Einstein]
-  first_name: [Albert, A.]
+  last_name: [Morales]
+  first_name: [Carlos, A.]
 
   style: apa
   locale: en
