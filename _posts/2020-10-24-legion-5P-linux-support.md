@@ -4,6 +4,7 @@ title: Legion 5P, Linux support
 date: 2020-10-24 20:01:00
 description: Linux support in the Lenovo Legion 5P
 comments: true
+tags: linux
 ---
 The specific model I will cover in this post is a Lenovo Legion 5P-15ARH05H.
 The distribution in use is Manjaro Linux with an initial setup done using media
