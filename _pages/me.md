@@ -39,8 +39,12 @@ coffee tasting, and open-source software.
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/AWS-SolArchitect-Associate-2020.png" class="img-fluid rounded z-depth-1" %}
-        {% include figure.html path="assets/img/AWS-Developer-Associat-2020.png" class="img-fluid rounded z-depth-1" %}
-        {% include figure.html path="assets/img/ATUoS_logo.gi" class="img-fluid rounded z-depth-1" %}
+        <img src="assets/img/AWS-SolArchitect-Associate-2020.png" style="width:150px;">
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+        <img src="assets/img/AWS-Developer-Associate-2020.png" style="width:150px">
+    </div>
+    <div class="col-sm mt-3 mt-md-0">
+         <img src="assets/img/TUoS_logo.gif" style=" width:250px; margin-top:15px;">
     </div>
 </div>
