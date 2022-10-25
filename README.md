@@ -11,8 +11,6 @@ Nowadays, the template was fully re-write and many additional features were adde
 
 Go visit their template's site!
 
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
 ## License
 
 The theme is available as open source under the terms of the [MIT License](https://github.com/alshedivat/al-folio/blob/master/LICENSE).
