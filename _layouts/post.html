@@ -57,5 +57,18 @@ layout: default
     </script>
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
   {%- endif %}
+  
+  {%- if page.social %}
+  <!-- Social -->
+  <div class="social">
+    <div class="contact-icons">
+    {% include social.html %}
+    </div>
 
+    <div class="contact-note">
+      {{ site.contact_note }}
+    </div>
+    
+  </div>
+  {%- endif %}
 </div>
