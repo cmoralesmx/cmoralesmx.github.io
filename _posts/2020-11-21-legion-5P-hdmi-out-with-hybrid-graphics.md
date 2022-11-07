@@ -6,6 +6,10 @@ description: Steps to fix the HDMI-out port using hybrid graphics in Lenovo Legi
 comments: true
 tags: linux
 ---
+> Updated on November 2022: HDMI-out with hybrid graphics is not an issue any 
+more for this computer. Here's my [post](/blog/2022/legion-5P-hybrid-graphics)
+ about it
+
 Firstly, I tested if this was fixed in a different kernel version and by
 changing the version of the drivers. I tried with kernel versions 5.4, to 5.10.
 Only version 5.6 appeared to have everything working correctly.

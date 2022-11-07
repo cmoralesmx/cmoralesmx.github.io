@@ -44,6 +44,11 @@ Next is a list of issues fixed with links to the fixing procedures
 - Hybrid graphics causing blank HDMI-out
   - [Solution using discrete graphics only](#hdmi-out-with-discrete-graphics-and-brightness-control)
   - [Solution patching the kernel to fix the hybrid mode](/blog/2020/legion-5P-hdmi-out-with-hybrid-graphics.html)
+  - [Fixed upstream](/blog/2022/legion-5P-hybrid-graphics)
+
+> Updated on November 2022: HDMI-out with hybrid graphics is not an issue any 
+more for this computer. Here's my [post](/blog/2022/legion-5P-hybrid-graphics)
+ about it
 
 ---
 ### Noisy PC speaker on errors

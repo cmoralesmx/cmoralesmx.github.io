@@ -5,6 +5,7 @@ date: 2022-10-17 13:01:00
 description: My experience completing the Cloud Resume Challenge in AWS
 comments: true
 tags: cloud, aws
+social: true
 ---
 
 I stumbled upon the [Cloud Resume Challenge](https://cloudresumechallenge.dev/) 
