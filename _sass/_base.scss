@@ -133,6 +133,22 @@ blockquote {
   }
 }
 
+.post{
+    p {
+        text-align: justify;
+        font-size: 1.1rem;
+    }
+    p.desc {
+      text-align: inherit;
+      font-size: 0.97rem;
+    }
+    img.camg {
+        max-width: 350px;
+        float: right;
+        margin: 0 auto 0 20px;
+    }
+}
+
 
 // Navbar customization
 
